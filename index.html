@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<>!DOCTYPE html
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Safi Cosmetics | Pure & Radiant Beauty</title>
+    <title>ZUNAI GLASS | Luxury Sunglasses & Timeless Eyewear</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -11,805 +11,1199 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            50: '#111111',
-                            100: '#e0effe',
-                            200: '#bae0fd',
-                            300: '#7cc8fb',
-                            400: '#36aff7',
-                            500: '#0c93e7',
-                            600: '#0274c7',
-                            700: '#035ca3',
-                            800: '#074e87',
-                            900: '#0c4270',
-                            950: '#082a4a',
-                        }
+                        gold: {
+                            400: '#44444',
+                            500: '#C6A15B', // Primary Champagne Gold
+                            600: '#A88340',
+                            700: '#8A682D'
+                        },
+                        ivory: '#F5F1E8',
+                        beige: '#D8CBB8',
+                        charcoal: '#292929',
+                        obsidian: '#111111'
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif']
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Montserrat', 'sans-serif']
                     }
                 }
             }
         }
     </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
+
     <style>
-        /* Custom scrollbar and animations */
+        body {
+            background-color: #F5F1E8;
+            color: #292929;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Custom luxury scrollbar */
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 7px;
         }
         ::-webkit-scrollbar-track {
-            background: #f1f5f9;
+            background: #111111;
         }
         ::-webkit-scrollbar-thumb {
-            background: #93c5fd;
-            border-radius: 4px;
+            background: #C6A15B;
+            border-radius: 3px;
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #3b82f6;
-        }
-        
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.9);
+
+        /* Glassmorphism Navigation */
+        .glass-header {
+            background: rgba(17, 17, 17, 0.94);
             backdrop-filter: blur(12px);
         }
-        
-        .toast-enter {
-            transform: translateY(100%);
-            opacity: 0;
+
+        /* Smooth Image Zoom Hover */
+        .product-img-container img {
+            transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
         }
-        .toast-show {
-            transform: translateY(0);
-            opacity: 1;
+        .product-card:hover .product-img-container img {
+            transform: scale(1.08);
         }
-        
-        /* Smooth image zoom */
-        .img-zoom {
-            transition: transform 0.5s ease;
+
+        /* Shimmer Gold Effect */
+        .btn-gold {
+            background: linear-gradient(135deg, #D8B46E 0%, #C6A15B 50%, #A88340 100%);
+            transition: all 0.3s ease;
         }
-        .product-card:hover .img-zoom {
-            transform: scale(1.06);
+        .btn-gold:hover {
+            box-shadow: 0 10px 25px -5px rgba(198, 161, 91, 0.4);
+            filter: brightness(1.08);
+        }
+
+        .gold-border-glow {
+            border-color: #C6A15B;
+            box-shadow: 0 0 15px rgba(198, 161, 91, 0.2);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.4s ease-out forwards;
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen selection:bg-brand-500 selection:text-white">
+<body class="min-h-screen flex flex-col selection:bg-gold-500 selection:text-obsidian">
 
-    <!-- Top Announcement Bar -->
-    <div class="bg-brand-900 text-white text-xs py-2 px-4 text-center font-medium tracking-wide">
-        ✨ Free Worldwide Express Shipping on Orders Over $50 | Use Code: <span class="font-bold text-brand-200 underline">SAFIGLOW</span>
+    <!-- Announcement Bar -->
+    <div class="bg-obsidian text-gold-500 border-b border-gold-500/20 text-[11px] py-2 px-4 text-center font-medium tracking-widest uppercase flex items-center justify-center gap-2">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+        <span>Complimentary Express Worldwide Shipping & 2-Year International Warranty</span>
+        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
     </div>
 
-    <!-- Main Navigation Header -->
-    <header class="sticky top-0 z-40 glass-nav border-b border-brand-100 transition-all duration-300">
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 glass-header border-b border-gold-500/20 text-white transition-all">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                
+
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 hover:text-brand-600 rounded-lg focus:outline-none" aria-label="Toggle Menu">
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-gold-500 hover:text-white transition-colors" aria-label="Toggle Navigation">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
 
                 <!-- Brand Logo -->
-                <a href="#" class="flex items-center gap-2 group">
-                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-brand-600 to-brand-400 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
-                        <i data-lucide="sparkles" class="w-5 h-5"></i>
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="font-serif text-2xl font-bold tracking-tight text-slate-900 leading-none">SAFI</span>
-                        <span class="text-[10px] font-semibold tracking-widest text-brand-600 uppercase">Cosmetics</span>
-                    </div>
+                <a href="javascript:void(0)" onclick="navigateTo('home')" class="flex flex-col items-center group">
+                    <span class="font-serif text-2xl sm:text-3xl font-bold tracking-[0.2em] text-white group-hover:text-gold-500 transition-colors">ZUNAI</span>
+                    <span class="text-[9px] tracking-[0.45em] text-gold-500 font-semibold uppercase -mt-1">GLASS PARIS</span>
                 </a>
 
-                <!-- Desktop Navigation Links -->
-                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-700">
-                    <a href="#hero" class="hover:text-brand-600 transition-colors py-1 border-b-2 border-transparent hover:border-brand-600">Home</a>
-                    <a href="#products-section" class="hover:text-brand-600 transition-colors py-1 border-b-2 border-transparent hover:border-brand-600">Shop All</a>
-                    <a href="#categories" class="hover:text-brand-600 transition-colors py-1 border-b-2 border-transparent hover:border-brand-600">Categories</a>
-                    <a href="#about" class="hover:text-brand-600 transition-colors py-1 border-b-2 border-transparent hover:border-brand-600">Our Story</a>
-                    <a href="#footer" class="hover:text-brand-600 transition-colors py-1 border-b-2 border-transparent hover:border-brand-600">Contact</a>
+                <!-- Desktop Menu Navigation -->
+                <nav class="hidden lg:flex items-center space-x-8 text-xs uppercase tracking-widest font-medium">
+                    <a href="javascript:void(0)" onclick="navigateTo('home')" class="nav-link text-gold-500 hover:text-gold-500 transition-colors py-1" data-page="home">Home</a>
+                    <a href="javascript:void(0)" onclick="navigateTo('shop'); filterCategory('All')" class="nav-link text-slate-300 hover:text-gold-500 transition-colors py-1" data-page="shop">Shop All</a>
+                    <a href="javascript:void(0)" onclick="navigateTo('shop'); filterCategory('Men')" class="nav-link text-slate-300 hover:text-gold-500 transition-colors py-1" data-page="men">Men's Edition</a>
+                    <a href="javascript:void(0)" onclick="navigateTo('shop'); filterCategory('Women')" class="nav-link text-slate-300 hover:text-gold-500 transition-colors py-1" data-page="women">Women's Edition</a>
+                    <a href="javascript:void(0)" onclick="navigateTo('about')" class="nav-link text-slate-300 hover:text-gold-500 transition-colors py-1" data-page="about">Craftsmanship</a>
+                    <a href="javascript:void(0)" onclick="navigateTo('contact')" class="nav-link text-slate-300 hover:text-gold-500 transition-colors py-1" data-page="contact">Concierge</a>
                 </nav>
 
-                <!-- Header Action Buttons -->
-                <div class="flex items-center space-x-4">
-                    <!-- Live Search Trigger / Desktop Search Input -->
-                    <div class="relative hidden sm:block w-48 lg:w-64">
-                        <input type="text" id="header-search-input" placeholder="Search products..." 
-                            class="w-full bg-brand-50/60 border border-brand-100 rounded-full py-2 pl-9 pr-4 text-xs focus:outline-none focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all">
-                        <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-2.5"></i>
+                <!-- Header Actions (Search, Wishlist, Cart) -->
+                <div class="flex items-center space-x-3 sm:space-x-5">
+                    
+                    <!-- Search Input Trigger Toggle -->
+                    <div class="relative hidden sm:block">
+                        <input type="text" id="header-search-input" placeholder="Search frame, lens..." 
+                            class="w-36 lg:w-48 bg-obsidian border border-gold-500/30 rounded-full py-1.5 pl-8 pr-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 focus:w-56 transition-all">
+                        <i data-lucide="search" class="w-3.5 h-3.5 text-gold-500 absolute left-2.5 top-2.5"></i>
                     </div>
 
-                    <!-- Wishlist Button -->
-                    <button id="wishlist-btn" class="relative p-2 text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-full transition-colors" title="Wishlist">
-                        <i data-lucide="heart" class="w-6 h-6"></i>
-                        <span id="wishlist-badge" class="hidden absolute -top-1 -right-1 bg-pink-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                    <!-- Wishlist Trigger -->
+                    <button id="wishlist-btn" onclick="toggleWishlistDrawer(true)" class="relative p-2 text-slate-300 hover:text-gold-500 transition-colors" title="Wishlist">
+                        <i data-lucide="heart" class="w-5 h-5"></i>
+                        <span id="wishlist-badge" class="hidden absolute -top-1 -right-1 bg-gold-500 text-obsidian text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
                     </button>
 
-                    <!-- Cart Drawer Trigger Button -->
-                    <button id="cart-toggle-btn" class="relative p-2 text-slate-700 hover:text-brand-600 hover:bg-brand-50 rounded-full transition-colors flex items-center gap-2" title="Shopping Cart">
+                    <!-- Shopping Cart Trigger -->
+                    <button id="cart-btn" onclick="toggleCartDrawer(true)" class="relative p-2 text-slate-300 hover:text-gold-500 transition-colors flex items-center gap-2" title="Cart">
                         <div class="relative">
-                            <i data-lucide="shopping-bag" class="w-6 h-6"></i>
-                            <span id="cart-badge" class="absolute -top-1 -right-1 bg-brand-600 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">0</span>
+                            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                            <span id="cart-badge" class="absolute -top-1 -right-1 bg-gold-500 text-obsidian text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
                         </div>
-                        <span class="hidden lg:block text-xs font-semibold text-slate-700" id="header-cart-total">$0.00</span>
+                        <span id="header-cart-total" class="hidden md:inline text-xs font-medium text-gold-400">$0</span>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- Mobile Drawer Navigation -->
-        <div id="mobile-menu" class="hidden md:hidden border-t border-brand-100 bg-white px-4 pt-3 pb-6 space-y-3">
-            <input type="text" id="mobile-search-input" placeholder="Search skincare, makeup..." 
-                class="w-full bg-slate-100 border border-slate-200 rounded-lg py-2.5 pl-9 pr-4 text-sm mb-2">
-            <a href="#hero" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-600">Home</a>
-            <a href="#products-section" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-600">Shop All</a>
-            <a href="#categories" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-600">Categories</a>
-            <a href="#about" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-600">Our Story</a>
-            <a href="#footer" class="block py-2 text-base font-medium text-slate-700 hover:text-brand-600">Contact</a>
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-gold-500/20 bg-obsidian px-6 py-6 space-y-4 text-xs font-medium uppercase tracking-widest">
+            <input type="text" id="mobile-search-input" placeholder="Search ZUNAI collection..." 
+                   class="w-full bg-slate-900 border border-gold-500/30 rounded-lg p-2.5 text-white placeholder-slate-500 mb-2">
+            <a href="javascript:void(0)" onclick="navigateTo('home'); toggleMobileMenu()" class="block text-gold-500 py-1">Home</a>
+            <a href="javascript:void(0)" onclick="navigateTo('shop'); filterCategory('All'); toggleMobileMenu()" class="block text-slate-300 py-1">Shop All Collection</a>
+            <a href="javascript:void(0)" onclick="navigateTo('shop'); filterCategory('Men'); toggleMobileMenu()" class="block text-slate-300 py-1">Men's Sunglasses</a>
+            <a href="javascript:void(0)" onclick="navigateTo('shop'); filterCategory('Women'); toggleMobileMenu()" class="block text-slate-300 py-1">Women's Sunglasses</a>
+            <a href="javascript:void(0)" onclick="navigateTo('about'); toggleMobileMenu()" class="block text-slate-300 py-1">About Craftsmanship</a>
+            <a href="javascript:void(0)" onclick="navigateTo('contact'); toggleMobileMenu()" class="block text-slate-300 py-1">Contact Concierge</a>
         </div>
     </header>
 
-    <!-- Main Content Body -->
+    <!-- MAIN CONTENT AREA (SPA View Containers) -->
     <main class="flex-grow">
-        
-        <!-- Hero Banner Section -->
-        <section id="hero" class="relative bg-gradient-to-r from-brand-50 via-white to-blue-50 py-16 md:py-24 overflow-hidden">
-            <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-200/40 rounded-full blur-3xl pointer-events-none"></div>
-            <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-200/40 rounded-full blur-3xl pointer-events-none"></div>
+
+        <!-- VIEW 1: HOME PAGE -->
+        <div id="view-home" class="view-container animate-fade-in">
             
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    
-                    <!-- Left Hero Content -->
-                    <div class="space-y-6 text-center md:text-left">
-                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-100/80 border border-brand-200 text-brand-700 text-xs font-semibold uppercase tracking-wider">
-                            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Clean & Cruelty-Free Beauty
-                        </div>
-                        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
-                            Illuminate Your Natural <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-blue-500">Radiance.</span>
-                        </h1>
-                        <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
-                            Discover Safi Cosmetics’ dermatologically tested formulations. Organic botanical extracts crafted to nurture, protect, and enhance your unique skin glow.
-                        </p>
-                        <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-2">
-                            <a href="#products-section" class="w-full sm:w-auto px-8 py-4 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-full shadow-lg shadow-brand-500/30 hover:shadow-brand-500/50 transition-all text-center flex items-center justify-center gap-2 group">
-                                Shop Best Sellers
-                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
-                            </a>
-                            <a href="#about" class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-brand-50 text-brand-700 font-semibold rounded-full border border-brand-200 shadow-sm transition-all text-center">
-                                Discover Our Ingredients
-                            </a>
+            <!-- Luxury Hero Banner Section -->
+            <section class="relative bg-obsidian text-white min-h-[85vh] flex items-center overflow-hidden border-b border-gold-500/20">
+                <div class="absolute inset-0 z-0">
+                    <img src="https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&q=80&w=1920" 
+                         alt="Luxury Sunglasses Model" 
+                         class="w-full h-full object-cover object-center opacity-40 mix-blend-luminosity scale-105 transition-transform duration-1000">
+                    <div class="absolute inset-0 bg-gradient-to-r from-obsidian via-obsidian/80 to-transparent"></div>
+                </div>
+
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-24">
+                    <div class="max-w-2xl space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gold-500/40 bg-gold-500/10 text-gold-400 text-xs font-semibold uppercase tracking-widest">
+                            <i data-lucide="crown" class="w-3.5 h-3.5"></i> 2026 Haute Couture Collection
                         </div>
                         
-                        <!-- Trust Badges -->
-                        <div class="pt-8 border-t border-slate-200/80 grid grid-cols-3 gap-4 text-center md:text-left">
-                            <div>
-                                <span class="block text-2xl font-bold text-slate-900 font-serif">100%</span>
-                                <span class="text-xs text-slate-500">Vegan & Pure</span>
+                        <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
+                            SEE THE WORLD <br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 via-gold-500 to-amber-200">IN STYLE.</span>
+                        </h1>
+                        
+                        <p class="text-slate-300 text-base sm:text-lg font-light leading-relaxed max-w-xl">
+                            Discover timeless elegance with ZUNAI GLASS. Handcrafted Italian acetate frames fitted with Carl Zeiss precision polarized lenses.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+                            <button onclick="navigateTo('shop')" class="btn-gold text-obsidian font-semibold px-8 py-4 rounded-none uppercase text-xs tracking-[0.2em] flex items-center justify-center gap-2 shadow-lg">
+                                Shop Collection
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                            <button onclick="navigateTo('about')" class="border border-gold-500/50 hover:border-gold-500 text-gold-400 hover:text-white px-8 py-4 rounded-none uppercase text-xs tracking-[0.2em] transition-all text-center">
+                                Our Craftsmanship
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Brand Value Proposition Strip -->
+            <section class="bg-obsidian border-b border-gold-500/20 py-10 text-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                        <div class="space-y-2">
+                            <i data-lucide="shield-check" class="w-6 h-6 text-gold-500 mx-auto"></i>
+                            <h4 class="font-serif text-sm font-semibold text-white uppercase tracking-wider">UV400 Polarized</h4>
+                            <p class="text-[11px] text-slate-400">100% Protection from harmful rays</p>
+                        </div>
+                        <div class="space-y-2">
+                            <i data-lucide="gem" class="w-6 h-6 text-gold-500 mx-auto"></i>
+                            <h4 class="font-serif text-sm font-semibold text-white uppercase tracking-wider">Italian Acetate</h4>
+                            <p class="text-[11px] text-slate-400">Hand-polished luxury materials</p>
+                        </div>
+                        <div class="space-y-2">
+                            <i data-lucide="truck" class="w-6 h-6 text-gold-500 mx-auto"></i>
+                            <h4 class="font-serif text-sm font-semibold text-white uppercase tracking-wider">Express Shipping</h4>
+                            <p class="text-[11px] text-slate-400">Complimentary global delivery</p>
+                        </div>
+                        <div class="space-y-2">
+                            <i data-lucide="award" class="w-6 h-6 text-gold-500 mx-auto"></i>
+                            <h4 class="font-serif text-sm font-semibold text-white uppercase tracking-wider">2-Year Warranty</h4>
+                            <p class="text-[11px] text-slate-400">Guaranteed replacement protection</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gender Edition Showcase Categories -->
+            <section class="py-20 bg-ivory">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-xl mx-auto mb-12">
+                        <span class="text-gold-600 font-semibold text-xs uppercase tracking-[0.25em]">Signature Lines</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-obsidian mt-2">Designed For Distinction</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Men's Collection Card -->
+                        <div class="relative h-96 group overflow-hidden border border-beige/60 shadow-xl cursor-pointer" onclick="navigateTo('shop'); filterCategory('Men')">
+                            <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&q=80&w=800" 
+                                 alt="Men's Sunglasses Collection" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/30 to-transparent"></div>
+                            <div class="absolute bottom-8 left-8 right-8 text-white">
+                                <span class="text-gold-400 text-xs font-semibold tracking-widest uppercase">For Him</span>
+                                <h3 class="font-serif text-2xl font-bold text-white mt-1">The Men's Collection</h3>
+                                <p class="text-xs text-slate-300 mt-2 mb-4">Architectural lines, titanium hinges, bold masculine silhouettes.</p>
+                                <span class="inline-flex items-center gap-2 text-xs font-semibold text-gold-400 uppercase tracking-widest group-hover:underline">
+                                    Explore Men's <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </span>
                             </div>
-                            <div>
-                                <span class="block text-2xl font-bold text-slate-900 font-serif">50k+</span>
-                                <span class="text-xs text-slate-500">Happy Customers</span>
-                            </div>
-                            <div>
-                                <span class="block text-2xl font-bold text-slate-900 font-serif">4.9 ★</span>
-                                <span class="text-xs text-slate-500">Average Rating</span>
+                        </div>
+
+                        <!-- Women's Collection Card -->
+                        <div class="relative h-96 group overflow-hidden border border-beige/60 shadow-xl cursor-pointer" onclick="navigateTo('shop'); filterCategory('Women')">
+                            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&q=80&w=800" 
+                                 alt="Women's Sunglasses Collection" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/30 to-transparent"></div>
+                            <div class="absolute bottom-8 left-8 right-8 text-white">
+                                <span class="text-gold-400 text-xs font-semibold tracking-widest uppercase">For Her</span>
+                                <h3 class="font-serif text-2xl font-bold text-white mt-1">The Women's Collection</h3>
+                                <p class="text-xs text-slate-300 mt-2 mb-4">Cat-eye contours, gold accents, delicate glamorous finishes.</p>
+                                <span class="inline-flex items-center gap-2 text-xs font-semibold text-gold-400 uppercase tracking-widest group-hover:underline">
+                                    Explore Women's <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </span>
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
 
-                    <!-- Right Hero Media Grid -->
-                    <div class="relative">
-                        <div class="relative mx-auto w-full max-w-md lg:max-w-none">
-                            <div class="aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white relative group">
-                                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=800" 
-                                     alt="Safi Cosmetics Glowing Model" 
-                                     class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent"></div>
-                                <div class="absolute bottom-6 left-6 right-6 p-4 glass-nav rounded-2xl border border-white/40 shadow-lg">
-                                    <div class="flex items-center justify-between">
-                                        <div>
-                                            <p class="text-xs font-medium text-slate-500">Featured Pick</p>
-                                            <p class="text-sm font-bold text-slate-900">Hyaluronic Acid Hydrating Serum</p>
-                                        </div>
-                                        <span class="bg-brand-600 text-white font-bold text-xs px-3 py-1.5 rounded-full">$38.00</span>
-                                    </div>
-                                </div>
+            <!-- Featured Home Product Grid -->
+            <section class="py-16 bg-white border-y border-beige/50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 gap-4">
+                        <div>
+                            <span class="text-gold-600 font-semibold text-xs uppercase tracking-[0.25em]">Curated Selection</span>
+                            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-obsidian mt-1">Featured Masterpieces</h2>
+                        </div>
+                        <button onclick="navigateTo('shop')" class="text-xs font-bold uppercase tracking-widest text-obsidian hover:text-gold-600 flex items-center gap-2 border-b border-obsidian pb-1">
+                            View All Frames <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+
+                    <div id="home-featured-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <!-- Injected via JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exclusive Luxury Banner -->
+            <section class="relative bg-obsidian py-24 text-white overflow-hidden">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div class="bg-gradient-to-r from-obsidian via-charcoal to-obsidian border border-gold-500/30 p-8 sm:p-14 lg:p-16 relative">
+                        <div class="max-w-xl space-y-6">
+                            <span class="text-gold-400 text-xs font-bold uppercase tracking-[0.3em]">Limited Edition Gold Series</span>
+                            <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white">Handcrafted 24k Gold-Plated Hardware</h2>
+                            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                                Experience uncompromised grandeur. Each frame in the ZUNAI Imperium Series features 24k gold-dipped titanium rivets and Japanese anti-reflective optics.
+                            </p>
+                            <div class="pt-2">
+                                <button onclick="navigateTo('shop'); filterCategory('Best Sellers')" class="btn-gold text-obsidian font-bold text-xs px-8 py-3.5 uppercase tracking-widest">
+                                    Reserve Imperium Series
+                                </button>
                             </div>
                         </div>
                     </div>
-
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Categories Highlight Strip -->
-        <section id="categories" class="py-12 bg-white border-y border-slate-100">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-center font-serif text-2xl font-bold text-slate-900 mb-8">Browse By Category</h2>
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
-                    
-                    <button onclick="filterCategory('Skincare')" class="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-brand-50 border border-brand-100 hover:border-brand-300 transition-all shadow-sm hover:shadow-md text-left p-4 flex flex-col justify-between">
-                        <div class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-brand-600 group-hover:scale-110 transition-transform">
-                            <i data-lucide="droplet" class="w-5 h-5"></i>
-                        </div>
-                        <div>
-                            <span class="block text-lg font-bold text-slate-900 group-hover:text-brand-600 transition-colors">Skincare</span>
-                            <span class="text-xs text-slate-500">Serums, Creams & Cleansers</span>
-                        </div>
-                    </button>
+            <!-- Testimonials & Reviews -->
+            <section class="py-20 bg-ivory border-t border-beige">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <span class="text-gold-600 font-semibold text-xs uppercase tracking-[0.25em]">Client Testimonials</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-obsidian mt-2 mb-12">Voices Of Luxury</h2>
 
-                    <button onclick="filterCategory('Makeup')" class="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-brand-50 border border-brand-100 hover:border-brand-300 transition-all shadow-sm hover:shadow-md text-left p-4 flex flex-col justify-between">
-                        <div class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-brand-600 group-hover:scale-110 transition-transform">
-                            <i data-lucide="sparkles" class="w-5 h-5"></i>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                        
+                        <div class="bg-white p-8 border border-beige/80 shadow-sm relative">
+                            <div class="flex text-gold-500 mb-4">
+                                <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                            </div>
+                            <p class="text-xs text-charcoal italic leading-relaxed mb-6">
+                                "ZUNAI GLASS has set a new benchmark for optical clarity and frame weight. The 'Aura Gold Cat-Eye' feels like custom haute couture."
+                            </p>
+                            <div>
+                                <span class="font-bold text-xs uppercase tracking-wider text-obsidian block">Victoria Sterling</span>
+                                <span class="text-[10px] text-gold-600 uppercase">Fashion Editor, Milan</span>
+                            </div>
                         </div>
-                        <div>
-                            <span class="block text-lg font-bold text-slate-900 group-hover:text-brand-600 transition-colors">Makeup</span>
-                            <span class="text-xs text-slate-500">Lipsticks, Foundations & Glow</span>
-                        </div>
-                    </button>
 
-                    <button onclick="filterCategory('Haircare')" class="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-brand-50 border border-brand-100 hover:border-brand-300 transition-all shadow-sm hover:shadow-md text-left p-4 flex flex-col justify-between">
-                        <div class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-brand-600 group-hover:scale-110 transition-transform">
-                            <i data-lucide="wind" class="w-5 h-5"></i>
+                        <div class="bg-white p-8 border border-beige/80 shadow-sm relative">
+                            <div class="flex text-gold-500 mb-4">
+                                <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                            </div>
+                            <p class="text-xs text-charcoal italic leading-relaxed mb-6">
+                                "The polarized ZEISS lenses completely eliminate glare while driving my classic coupe. Impressive craftsmanship and weight balance."
+                            </p>
+                            <div>
+                                <span class="font-bold text-xs uppercase tracking-wider text-obsidian block">Julian Vance</span>
+                                <span class="text-[10px] text-gold-600 uppercase">Architect, Zurich</span>
+                            </div>
                         </div>
-                        <div>
-                            <span class="block text-lg font-bold text-slate-900 group-hover:text-brand-600 transition-colors">Haircare</span>
-                            <span class="text-xs text-slate-500">Oils, Serums & Treatments</span>
-                        </div>
-                    </button>
 
-                    <button onclick="filterCategory('Fragrance')" class="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-brand-50 border border-brand-100 hover:border-brand-300 transition-all shadow-sm hover:shadow-md text-left p-4 flex flex-col justify-between">
-                        <div class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-brand-600 group-hover:scale-110 transition-transform">
-                            <i data-lucide="flower-2" class="w-5 h-5"></i>
+                        <div class="bg-white p-8 border border-beige/80 shadow-sm relative">
+                            <div class="flex text-gold-500 mb-4">
+                                <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-gold-500"></i>
+                            </div>
+                            <p class="text-xs text-charcoal italic leading-relaxed mb-6">
+                                "Unboxing the leather casing and gold-embossed authentication certificate was an experience in itself. Truly world-class quality."
+                            </p>
+                            <div>
+                                <span class="font-bold text-xs uppercase tracking-wider text-obsidian block">Elena Rostova</span>
+                                <span class="text-[10px] text-gold-600 uppercase">Verified Collector, Paris</span>
+                            </div>
                         </div>
-                        <div>
-                            <span class="block text-lg font-bold text-slate-900 group-hover:text-brand-600 transition-colors">Fragrance</span>
-                            <span class="text-xs text-slate-500">Eau de Parfum & Mists</span>
-                        </div>
-                    </button>
 
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
 
-        <!-- Main Products Catalog Section -->
-        <section id="products-section" class="py-16 bg-slate-50">
+        <!-- VIEW 2: SHOP ALL CATALOG PAGE -->
+        <div id="view-shop" class="view-container hidden animate-fade-in py-12">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-                <!-- Section Title & Filter Toolbar -->
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6 border-b border-slate-200 pb-6">
+                <!-- Catalog Header -->
+                <div class="border-b border-beige pb-8 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
                     <div>
-                        <span class="text-brand-600 font-bold text-xs uppercase tracking-widest">Our Collection</span>
-                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900">Explore Safi Formulas</h2>
+                        <span class="text-gold-600 text-xs font-bold uppercase tracking-[0.2em]" id="catalog-category-title">All Eyewear</span>
+                        <h1 class="font-serif text-3xl sm:text-4xl font-bold text-obsidian mt-1">The ZUNAI Eyewear Collection</h1>
                     </div>
 
-                    <!-- Category Pills & Sorting Bar -->
-                    <div class="flex flex-wrap items-center justify-between md:justify-end gap-3">
-                        <div class="flex flex-wrap items-center gap-2" id="category-filters">
-                            <button onclick="filterCategory('All')" class="cat-filter-btn active-cat px-4 py-2 rounded-full text-xs font-semibold transition-all bg-brand-600 text-white shadow-sm" data-category="All">All Products</button>
-                            <button onclick="filterCategory('Skincare')" class="cat-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-600 hover:bg-brand-50 border border-slate-200 transition-all" data-category="Skincare">Skincare</button>
-                            <button onclick="filterCategory('Makeup')" class="cat-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-600 hover:bg-brand-50 border border-slate-200 transition-all" data-category="Makeup">Makeup</button>
-                            <button onclick="filterCategory('Haircare')" class="cat-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-600 hover:bg-brand-50 border border-slate-200 transition-all" data-category="Haircare">Haircare</button>
-                            <button onclick="filterCategory('Fragrance')" class="cat-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-600 hover:bg-brand-50 border border-slate-200 transition-all" data-category="Fragrance">Fragrance</button>
+                    <!-- Category Pills & Sort Dropdown -->
+                    <div class="flex flex-wrap items-center gap-3">
+                        <div class="flex items-center gap-1 bg-white border border-beige p-1">
+                            <button onclick="filterCategory('All')" class="shop-filter-btn active-filter px-4 py-1.5 text-xs font-semibold uppercase tracking-wider transition-colors" data-cat="All">All</button>
+                            <button onclick="filterCategory('Men')" class="shop-filter-btn px-4 py-1.5 text-xs font-semibold uppercase tracking-wider transition-colors" data-cat="Men">Men</button>
+                            <button onclick="filterCategory('Women')" class="shop-filter-btn px-4 py-1.5 text-xs font-semibold uppercase tracking-wider transition-colors" data-cat="Women">Women</button>
+                            <button onclick="filterCategory('Best Sellers')" class="shop-filter-btn px-4 py-1.5 text-xs font-semibold uppercase tracking-wider transition-colors" data-cat="Best Sellers">Best Sellers</button>
+                            <button onclick="filterCategory('New Arrivals')" class="shop-filter-btn px-4 py-1.5 text-xs font-semibold uppercase tracking-wider transition-colors" data-cat="New Arrivals">New Arrivals</button>
                         </div>
 
-                        <!-- Price Sorting -->
-                        <div class="relative">
-                            <select id="sort-select" onchange="sortProducts()" class="bg-white border border-slate-200 rounded-full py-2 pl-4 pr-8 text-xs font-semibold text-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500 cursor-pointer">
-                                <option value="default">Sort by: Featured</option>
-                                <option value="price-low">Price: Low to High</option>
-                                <option value="price-high">Price: High to Low</option>
-                                <option value="rating">Highest Rated</option>
-                            </select>
-                        </div>
+                        <select id="shop-sort" onchange="renderShopGrid()" class="bg-white border border-beige px-4 py-2 text-xs font-medium text-obsidian focus:outline-none cursor-pointer">
+                            <option value="featured">Sort by: Featured</option>
+                            <option value="low-high">Price: Low to High</option>
+                            <option value="high-low">Price: High to Low</option>
+                            <option value="rating">Highest Rated</option>
+                        </select>
                     </div>
                 </div>
 
                 <!-- Products Grid -->
-                <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-                    <!-- Dynamic Product Cards Injected Here via JavaScript -->
+                <div id="main-shop-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Injected dynamically -->
                 </div>
 
-                <!-- Empty State Display -->
-                <div id="empty-state" class="hidden text-center py-16">
-                    <div class="w-16 h-16 bg-brand-50 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-500">
-                        <i data-lucide="search-x" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-1">No products found</h3>
-                    <p class="text-sm text-slate-500 mb-6">Try adjusting your search terms or filter selections.</p>
-                    <button onclick="resetFilters()" class="px-6 py-2.5 bg-brand-600 text-white rounded-full text-xs font-semibold hover:bg-brand-700 transition-colors">Reset All Filters</button>
+                <!-- Catalog Empty State -->
+                <div id="shop-empty-state" class="hidden text-center py-20">
+                    <i data-lucide="eye-off" class="w-12 h-12 text-slate-400 mx-auto mb-4"></i>
+                    <h3 class="font-serif text-xl font-bold text-obsidian mb-2">No frames matching criteria</h3>
+                    <p class="text-xs text-slate-500 mb-6">Try clearing your search terms or choosing another category filter.</p>
+                    <button onclick="filterCategory('All')" class="btn-gold text-obsidian text-xs font-bold uppercase tracking-widest px-6 py-3">Reset Catalog Filters</button>
                 </div>
 
             </div>
-        </section>
+        </div>
 
-        <!-- Brand Values / Story Section -->
-        <section id="about" class="py-20 bg-white">
+        <!-- VIEW 3: PRODUCT DETAIL SINGLE VIEW PAGE -->
+        <div id="view-product-detail" class="view-container hidden animate-fade-in py-12">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-gradient-to-br from-brand-900 to-slate-900 rounded-3xl p-8 sm:p-12 lg:p-16 text-white relative overflow-hidden shadow-2xl">
-                    <div class="absolute top-0 right-0 -mt-12 -mr-12 w-80 h-80 bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
-                    
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
-                        <div class="space-y-6">
-                            <span class="text-brand-300 font-bold text-xs uppercase tracking-widest">The Safi Promise</span>
-                            <h2 class="font-serif text-3xl sm:text-4xl font-bold leading-tight">Pure Botanical Formulas Powered By Modern Science</h2>
-                            <p class="text-brand-100/90 text-sm sm:text-base leading-relaxed">
-                                Founded with a commitment to pure elegance, Safi Cosmetics blends high-potency organic botanical actives with clinical dermatological research. We believe luxury skincare should be transparent, ethical, and effortlessly effective.
+                <button onclick="navigateTo('shop')" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-slate-600 hover:text-gold-600 mb-8">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Back To Collection
+                </button>
+
+                <div id="product-detail-container">
+                    <!-- Injected via JS when item clicked -->
+                </div>
+            </div>
+        </div>
+
+        <!-- VIEW 4: CRAFTSMANSHIP / ABOUT US PAGE -->
+        <div id="view-about" class="view-container hidden animate-fade-in py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+                
+                <div class="text-center max-w-2xl mx-auto space-y-4">
+                    <span class="text-gold-600 text-xs font-semibold uppercase tracking-[0.3em]">Heritage & Precision</span>
+                    <h1 class="font-serif text-4xl sm:text-5xl font-bold text-obsidian">The ZUNAI Philosophy</h1>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        Born in Paris and engineered with Italian optical mastery, ZUNAI GLASS represents the pinnacle of luxury sunwear craftsmanship.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 border border-beige space-y-4 text-center">
+                        <div class="w-12 h-12 rounded-full bg-gold-500/10 text-gold-600 flex items-center justify-center mx-auto">
+                            <i data-lucide="scissors" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-obsidian">Italian Mazzucchelli Acetate</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            Crafted exclusively from organic cotton cellulose block acetate, cured for 6 months to guarantee ultra-durable structural integrity.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 border border-beige space-y-4 text-center">
+                        <div class="w-12 h-12 rounded-full bg-gold-500/10 text-gold-600 flex items-center justify-center mx-auto">
+                            <i data-lucide="sun" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-obsidian">ZEISS Precision Optics</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            Fitted with scratch-resistant, anti-reflective polarized lenses engineered to preserve natural color contrast and eliminate 100% UV rays.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 border border-beige space-y-4 text-center">
+                        <div class="w-12 h-12 rounded-full bg-gold-500/10 text-gold-600 flex items-center justify-center mx-auto">
+                            <i data-lucide="layers" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-obsidian">Japanese Titanium Hinges</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            Featherlight 5-barrel custom titanium hinge pins plated in 24k gold, tested for over 50,000 continuous flex cycles.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Atelier Photo Feature -->
+                <div class="relative h-96 bg-obsidian text-white overflow-hidden border border-gold-500/30 flex items-center">
+                    <img src="https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&q=80&w=1600" 
+                         alt="Eyewear Workshop" 
+                         class="w-full h-full object-cover opacity-30">
+                    <div class="absolute inset-0 bg-gradient-to-r from-obsidian via-obsidian/70 to-transparent"></div>
+                    <div class="relative z-10 max-w-xl p-8 sm:p-12 space-y-4">
+                        <span class="text-gold-400 text-xs font-bold uppercase tracking-widest">Handcrafted Excellence</span>
+                        <h2 class="font-serif text-3xl font-bold text-white">Over 80 Manual Steps In Every Frame</h2>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            From hand-carving individual acetate temples to precision laser engraving of serial numbers, each ZUNAI frame is inspect by master opticians.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- VIEW 5: CONTACT CONCIERGE PAGE -->
+        <div id="view-contact" class="view-container hidden animate-fade-in py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Left Details -->
+                    <div class="space-y-8">
+                        <div>
+                            <span class="text-gold-600 text-xs font-semibold uppercase tracking-[0.3em]">Personal Assistant</span>
+                            <h1 class="font-serif text-4xl font-bold text-obsidian mt-1">ZUNAI Luxury Concierge</h1>
+                            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                                Require styling advice, bespoke lens fitting, or corporate gifting? Our luxury optics advisors are available worldwide.
                             </p>
-                            
-                            <div class="grid grid-cols-2 gap-6 pt-4">
-                                <div class="flex items-start gap-3">
-                                    <div class="p-2 bg-white/10 rounded-lg text-brand-300">
-                                        <i data-lucide="leaf" class="w-5 h-5"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-semibold text-sm">Clean Actives</h4>
-                                        <p class="text-xs text-brand-200/70">Paraben & Sulfate free</p>
-                                    </div>
+                        </div>
+
+                        <div class="space-y-6 text-xs text-charcoal">
+                            <div class="flex items-start gap-4">
+                                <div class="p-3 bg-white border border-beige text-gold-600">
+                                    <i data-lucide="map-pin" class="w-5 h-5"></i>
                                 </div>
-                                <div class="flex items-start gap-3">
-                                    <div class="p-2 bg-white/10 rounded-lg text-brand-300">
-                                        <i data-lucide="heart-handshake" class="w-5 h-5"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-semibold text-sm">Cruelty Free</h4>
-                                        <p class="text-xs text-brand-200/70">100% Leaping Bunny certified</p>
-                                    </div>
+                                <div>
+                                    <h4 class="font-bold uppercase tracking-wider text-obsidian">Global Flagship Boutique</h4>
+                                    <p class="text-slate-500 mt-0.5">244 Rue Saint-Honoré, 75001 Paris, France</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="p-3 bg-white border border-beige text-gold-600">
+                                    <i data-lucide="phone" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold uppercase tracking-wider text-obsidian">Private Client Phone</h4>
+                                    <p class="text-slate-500 mt-0.5">+33 (0) 1 42 68 00 00 / +1 (800) 986-ZUNAI</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="p-3 bg-white border border-beige text-gold-600">
+                                    <i data-lucide="mail" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold uppercase tracking-wider text-obsidian">Email Inquiries</h4>
+                                    <p class="text-slate-500 mt-0.5">concierge@zunaiglass.com</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="relative">
-                            <img src="https://images.unsplash.com/photo-1608248597263-0057e43a3524?auto=format&fit=crop&q=80&w=800" 
-                                 alt="Cosmetic Lab Ingredients" 
-                                 class="rounded-2xl border-2 border-white/20 shadow-xl w-full h-80 object-cover">
+                        <!-- Store Locations Preview -->
+                        <div class="border-t border-beige pt-6">
+                            <h4 class="font-serif font-bold text-sm text-obsidian mb-3">Global Showrooms</h4>
+                            <div class="grid grid-cols-3 gap-2 text-[11px] text-slate-600 font-medium uppercase">
+                                <div class="bg-white p-3 border border-beige text-center">Paris</div>
+                                <div class="bg-white p-3 border border-beige text-center">Milan</div>
+                                <div class="bg-white p-3 border border-beige text-center">New York</div>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Right Form -->
+                    <div class="bg-white p-8 border border-beige shadow-sm">
+                        <h3 class="font-serif text-2xl font-bold text-obsidian mb-6">Send Concierge Message</h3>
+                        <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-slate-700 mb-1">Full Name</label>
+                                <input type="text" required placeholder="e.g. Lord Alexander Vance" class="w-full border border-beige p-3 text-xs focus:border-gold-500 outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-slate-700 mb-1">Email Address</label>
+                                <input type="email" required placeholder="alexander@vance.com" class="w-full border border-beige p-3 text-xs focus:border-gold-500 outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-slate-700 mb-1">Inquiry Type</label>
+                                <select class="w-full border border-beige p-3 text-xs focus:border-gold-500 outline-none">
+                                    <option>Bespoke Styling Consultation</option>
+                                    <option>Order Tracking & Support</option>
+                                    <option>Warranty & Optical Care</option>
+                                    <option>Press & Corporate Inquiries</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-slate-700 mb-1">Your Message</label>
+                                <textarea rows="4" required placeholder="How may our optical advisors assist you today?" class="w-full border border-beige p-3 text-xs focus:border-gold-500 outline-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full btn-gold text-obsidian text-xs font-bold uppercase tracking-widest py-3.5 shadow-md">
+                                Submit Inquiry
+                            </button>
+                        </form>
+                    </div>
                 </div>
+
             </div>
-        </section>
+        </div>
 
     </main>
 
-    <!-- Footer -->
-    <footer id="footer" class="bg-slate-900 text-slate-300 pt-16 pb-12 border-t border-slate-800">
+    <!-- FOOTER SECTION -->
+    <footer class="bg-obsidian text-white border-t border-gold-500/20 pt-16 pb-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-charcoal">
                 
                 <!-- Brand Info -->
                 <div class="lg:col-span-2 space-y-4">
-                    <a href="#" class="flex items-center gap-2">
-                        <div class="w-9 h-9 rounded-full bg-brand-500 flex items-center justify-center text-white">
-                            <i data-lucide="sparkles" class="w-5 h-5"></i>
-                        </div>
-                        <span class="font-serif text-2xl font-bold tracking-tight text-white">SAFI <span class="text-brand-400 text-xs font-sans uppercase">Cosmetics</span></span>
+                    <a href="javascript:void(0)" onclick="navigateTo('home')" class="flex flex-col items-start">
+                        <span class="font-serif text-2xl font-bold tracking-[0.2em] text-white">ZUNAI</span>
+                        <span class="text-[8px] tracking-[0.45em] text-gold-500 font-semibold uppercase">GLASS PARIS</span>
                     </a>
                     <p class="text-slate-400 text-xs leading-relaxed max-w-sm">
-                        Elevating daily beauty rituals with conscious, dermatologist-approved skincare and cosmetics formulations. Designed for natural glow and timeless beauty.
+                        ZUNAI GLASS is an international luxury eyewear house dedicated to architectural frame design, rare materials, and precision polarized optical lenses.
                     </p>
                     <div class="flex items-center space-x-3 pt-2">
-                        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-brand-600 text-slate-400 hover:text-white flex items-center justify-center transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a>
-                        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-brand-600 text-slate-400 hover:text-white flex items-center justify-center transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
-                        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-brand-600 text-slate-400 hover:text-white flex items-center justify-center transition-colors"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-charcoal text-gold-400 hover:bg-gold-500 hover:text-obsidian flex items-center justify-center transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-charcoal text-gold-400 hover:bg-gold-500 hover:text-obsidian flex items-center justify-center transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-charcoal text-gold-400 hover:bg-gold-500 hover:text-obsidian flex items-center justify-center transition-colors"><i data-lucide="twitter" class="w-4 h-4"></i></a>
                     </div>
                 </div>
 
-                <!-- Links 1 -->
+                <!-- Footer Column 1 -->
                 <div>
-                    <h4 class="text-white font-semibold text-xs uppercase tracking-wider mb-4">Quick Links</h4>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-gold-400 mb-4">Collections</h4>
                     <ul class="space-y-2.5 text-xs text-slate-400">
-                        <li><a href="#products-section" class="hover:text-brand-400 transition-colors">Best Sellers</a></li>
-                        <li><a href="#categories" class="hover:text-brand-400 transition-colors">Skincare Collection</a></li>
-                        <li><a href="#categories" class="hover:text-brand-400 transition-colors">Makeup & Cosmetics</a></li>
-                        <li><a href="#categories" class="hover:text-brand-400 transition-colors">Fragrances & Perfumes</a></li>
+                        <li><a href="javascript:void(0)" onclick="navigateTo('shop'); filterCategory('Men')" class="hover:text-gold-400 transition-colors">Men's Eyewear</a></li>
+                        <li><a href="javascript:void(0)" onclick="navigateTo('shop'); filterCategory('Women')" class="hover:text-gold-400 transition-colors">Women's Eyewear</a></li>
+                        <li><a href="javascript:void(0)" onclick="navigateTo('shop'); filterCategory('Best Sellers')" class="hover:text-gold-400 transition-colors">Best Sellers</a></li>
+                        <li><a href="javascript:void(0)" onclick="navigateTo('shop'); filterCategory('New Arrivals')" class="hover:text-gold-400 transition-colors">New Arrivals 2026</a></li>
                     </ul>
                 </div>
 
-                <!-- Links 2 -->
+                <!-- Footer Column 2 -->
                 <div>
-                    <h4 class="text-white font-semibold text-xs uppercase tracking-wider mb-4">Customer Care</h4>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-gold-400 mb-4">Bespoke Client Services</h4>
                     <ul class="space-y-2.5 text-xs text-slate-400">
-                        <li><a href="#" class="hover:text-brand-400 transition-colors">Shipping & Delivery</a></li>
-                        <li><a href="#" class="hover:text-brand-400 transition-colors">Returns & Exchange</a></li>
-                        <li><a href="#" class="hover:text-brand-400 transition-colors">Track Order</a></li>
-                        <li><a href="#" class="hover:text-brand-400 transition-colors">FAQs & Support</a></li>
+                        <li><a href="javascript:void(0)" onclick="navigateTo('contact')" class="hover:text-gold-400 transition-colors">Private Styling Appointment</a></li>
+                        <li><a href="javascript:void(0)" onclick="navigateTo('about')" class="hover:text-gold-400 transition-colors">Optical Care Guide</a></li>
+                        <li><a href="javascript:void(0)" onclick="navigateTo('contact')" class="hover:text-gold-400 transition-colors">Worldwide Shipping & Returns</a></li>
+                        <li><a href="javascript:void(0)" onclick="navigateTo('contact')" class="hover:text-gold-400 transition-colors">Authenticity Certificate</a></li>
                     </ul>
                 </div>
 
-                <!-- Newsletter Signup -->
+                <!-- Newsletter Column -->
                 <div>
-                    <h4 class="text-white font-semibold text-xs uppercase tracking-wider mb-4">Join The Glow Club</h4>
-                    <p class="text-xs text-slate-400 mb-3">Subscribe for 15% off your first order & secret VIP offers.</p>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-gold-400 mb-4">The Private Club</h4>
+                    <p class="text-xs text-slate-400 mb-3">Subscribe to receive invitation-only private collection launches and $50 voucher.</p>
                     <form onsubmit="handleNewsletter(event)" class="space-y-2">
-                        <input type="email" required placeholder="Enter your email address" 
-                               class="w-full bg-slate-800 border border-slate-700 rounded-lg py-2 px-3 text-xs text-white focus:outline-none focus:ring-2 focus:ring-brand-500">
-                        <button type="submit" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-semibold py-2 px-4 rounded-lg text-xs transition-colors">Subscribe Now</button>
+                        <input type="email" required placeholder="Enter your email" class="w-full bg-charcoal border border-slate-700 p-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-gold-500">
+                        <button type="submit" class="w-full btn-gold text-obsidian text-xs font-bold uppercase tracking-widest py-2.5">Subscribe</button>
                     </form>
                 </div>
 
             </div>
 
-            <!-- Copyright -->
-            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-                <p>&copy; 2026 Safi Cosmetics Ltd. All rights reserved.</p>
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-4">
+                <p>&copy; 2026 ZUNAI GLASS PARIS SARL. All rights reserved.</p>
                 <div class="flex space-x-6">
-                    <a href="#" class="hover:underline">Privacy Policy</a>
-                    <a href="#" class="hover:underline">Terms of Service</a>
-                    <a href="#" class="hover:underline">Cookies Settings</a>
+                    <a href="#" class="hover:text-gold-400">Privacy Policy</a>
+                    <a href="#" class="hover:text-gold-400">Terms of Haute Couture</a>
+                    <a href="#" class="hover:text-gold-400">Cookie Preferences</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- CART SLIDE-OUT DRAWER OVERLAY -->
-    <div id="cart-drawer-overlay" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300">
-        <div id="cart-drawer" class="fixed right-0 top-0 bottom-0 w-full max-w-md bg-white shadow-2xl flex flex-col translate-x-full transition-transform duration-300 ease-out">
+    <!-- CART SLIDE-OUT DRAWER -->
+    <div id="cart-drawer-overlay" class="fixed inset-0 bg-obsidian/70 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300">
+        <div id="cart-drawer" class="fixed right-0 top-0 bottom-0 w-full max-w-md bg-white shadow-2xl flex flex-col translate-x-full transition-transform duration-300 border-l border-beige">
             
-            <!-- Drawer Header -->
-            <div class="p-6 border-b border-slate-100 flex items-center justify-between bg-brand-50/50">
+            <div class="p-6 bg-obsidian text-white flex items-center justify-between border-b border-gold-500/20">
                 <div class="flex items-center gap-2">
-                    <i data-lucide="shopping-bag" class="w-5 h-5 text-brand-600"></i>
-                    <h3 class="font-serif text-lg font-bold text-slate-900">Your Shopping Cart</h3>
-                    <span id="cart-count-badge" class="bg-brand-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">0</span>
+                    <i data-lucide="shopping-bag" class="w-5 h-5 text-gold-500"></i>
+                    <h3 class="font-serif text-lg font-bold text-white">Your Shopping Bag</h3>
+                    <span id="cart-drawer-count" class="bg-gold-500 text-obsidian text-xs font-bold px-2 py-0.5">0</span>
                 </div>
-                <button id="close-cart-btn" class="p-2 text-slate-400 hover:text-slate-600 rounded-full hover:bg-white transition-colors">
+                <button onclick="toggleCartDrawer(false)" class="text-slate-400 hover:text-white p-1">
                     <i data-lucide="x" class="w-5 h-5"></i>
                 </button>
             </div>
 
-            <!-- Drawer Cart Body Items -->
-            <div id="cart-items-container" class="flex-grow overflow-y-auto p-6 space-y-4">
-                <!-- Cart items dynamically rendered here -->
+            <div id="cart-drawer-items" class="flex-grow overflow-y-auto p-6 space-y-4">
+                <!-- Cart Items Injected -->
             </div>
 
-            <!-- Cart Drawer Footer -->
-            <div class="p-6 border-t border-slate-100 bg-slate-50 space-y-4">
-                <div class="space-y-2">
-                    <div class="flex justify-between text-sm text-slate-500">
+            <div class="p-6 bg-ivory border-t border-beige space-y-4">
+                <!-- Promo Code -->
+                <div class="flex gap-2">
+                    <input type="text" id="promo-code-input" placeholder="Promo code (e.g. ZUNAI10)" class="flex-grow border border-beige p-2 text-xs uppercase focus:border-gold-500 outline-none">
+                    <button onclick="applyPromoCode()" class="bg-obsidian text-gold-400 text-xs px-4 font-bold uppercase hover:bg-gold-500 hover:text-obsidian transition-colors">Apply</button>
+                </div>
+
+                <div class="space-y-2 text-xs text-slate-600">
+                    <div class="flex justify-between">
                         <span>Subtotal</span>
-                        <span id="cart-subtotal" class="font-semibold text-slate-800">$0.00</span>
+                        <span id="cart-drawer-subtotal" class="font-bold text-obsidian">$0.00</span>
                     </div>
-                    <div class="flex justify-between text-sm text-slate-500">
-                        <span>Shipping</span>
-                        <span class="text-brand-600 font-medium">Calculated at checkout</span>
+                    <div id="promo-discount-row" class="flex justify-between text-emerald-600 hidden">
+                        <span>Promo Discount</span>
+                        <span id="promo-discount-amount">-$0.00</span>
                     </div>
-                    <div class="flex justify-between text-base font-bold text-slate-900 pt-2 border-t border-slate-200">
+                    <div class="flex justify-between">
+                        <span>Worldwide Express Shipping</span>
+                        <span class="text-gold-600 font-bold uppercase">FREE</span>
+                    </div>
+                    <div class="flex justify-between text-sm font-bold text-obsidian pt-2 border-t border-beige">
                         <span>Estimated Total</span>
-                        <span id="cart-total" class="text-brand-600">$0.00</span>
+                        <span id="cart-drawer-total" class="text-gold-600">$0.00</span>
                     </div>
                 </div>
 
-                <button id="checkout-btn" onclick="openCheckoutModal()" class="w-full py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-full shadow-lg shadow-brand-500/20 transition-all flex items-center justify-center gap-2">
-                    Proceed to Checkout
-                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                <button onclick="openCheckoutModal()" class="w-full btn-gold text-obsidian font-bold text-xs uppercase tracking-widest py-3.5 shadow-md flex items-center justify-center gap-2">
+                    Proceed To Checkout <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </button>
             </div>
 
         </div>
     </div>
 
-    <!-- QUICK VIEW PRODUCT MODAL -->
-    <div id="quick-view-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl shadow-2xl max-w-2xl w-full overflow-hidden relative scale-95 transition-transform duration-300" id="quick-view-content">
-            <button id="close-quick-modal" class="absolute top-4 right-4 z-10 p-2 bg-white/80 rounded-full text-slate-500 hover:text-slate-900 transition-colors">
+    <!-- WISHLIST SLIDE-OUT DRAWER -->
+    <div id="wishlist-drawer-overlay" class="fixed inset-0 bg-obsidian/70 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300">
+        <div id="wishlist-drawer" class="fixed right-0 top-0 bottom-0 w-full max-w-md bg-white shadow-2xl flex flex-col translate-x-full transition-transform duration-300 border-l border-beige">
+            
+            <div class="p-6 bg-obsidian text-white flex items-center justify-between border-b border-gold-500/20">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="heart" class="w-5 h-5 text-gold-500"></i>
+                    <h3 class="font-serif text-lg font-bold text-white">Saved Frames</h3>
+                    <span id="wishlist-drawer-count" class="bg-gold-500 text-obsidian text-xs font-bold px-2 py-0.5">0</span>
+                </div>
+                <button onclick="toggleWishlistDrawer(false)" class="text-slate-400 hover:text-white p-1">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div id="wishlist-drawer-items" class="flex-grow overflow-y-auto p-6 space-y-4">
+                <!-- Wishlist Items Injected -->
+            </div>
+
+        </div>
+    </div>
+
+    <!-- QUICK VIEW MODAL -->
+    <div id="quick-view-modal" class="fixed inset-0 bg-obsidian/70 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4">
+        <div class="bg-white max-w-3xl w-full border border-beige shadow-2xl overflow-hidden relative scale-95 transition-transform duration-300" id="quick-view-content">
+            <button onclick="closeQuickViewModal()" class="absolute top-4 right-4 z-10 p-2 text-slate-500 hover:text-obsidian bg-white/80 backdrop-blur">
                 <i data-lucide="x" class="w-5 h-5"></i>
             </button>
-            <div id="quick-view-body" class="grid grid-cols-1 sm:grid-cols-2">
-                <!-- Modal details injected here -->
+            <div id="quick-view-body" class="grid grid-cols-1 md:grid-cols-2">
+                <!-- Modal details injected -->
             </div>
         </div>
     </div>
 
-    <!-- CHECKOUT MODAL -->
-    <div id="checkout-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl shadow-2xl max-w-lg w-full p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
-            <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-600 rounded-full">
+    <!-- STEP-BY-STEP SECURE CHECKOUT MODAL -->
+    <div id="checkout-modal" class="fixed inset-0 bg-obsidian/80 backdrop-blur-md z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4">
+        <div class="bg-white max-w-xl w-full border border-gold-500/30 p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 text-slate-400 hover:text-obsidian">
                 <i data-lucide="x" class="w-5 h-5"></i>
             </button>
 
-            <div class="mb-6">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 text-brand-700 text-xs font-semibold mb-2">
-                    <i data-lucide="shield-check" class="w-4 h-4"></i> Secure SSL Checkout
-                </div>
-                <h3 class="font-serif text-2xl font-bold text-slate-900">Complete Your Order</h3>
-                <p class="text-xs text-slate-500">Demo checkout form for Safi Cosmetics.</p>
+            <div class="mb-6 border-b border-beige pb-4">
+                <span class="text-gold-600 text-[10px] font-bold uppercase tracking-[0.2em] block">Encrypted 256-Bit SSL</span>
+                <h3 class="font-serif text-2xl font-bold text-obsidian">Complete ZUNAI Purchase</h3>
             </div>
 
-            <form onsubmit="handleCheckout(event)" class="space-y-4">
+            <form onsubmit="handleCheckoutSubmit(event)" class="space-y-4 text-xs">
                 <div>
-                    <label class="block text-xs font-semibold text-slate-700 mb-1">Full Name</label>
-                    <input type="text" required placeholder="e.g. Jane Doe" class="w-full border border-slate-200 rounded-lg p-2.5 text-xs focus:ring-2 focus:ring-brand-500 outline-none">
+                    <label class="block font-bold text-obsidian uppercase mb-1">Full Name</label>
+                    <input type="text" required placeholder="e.g. Lord Alexander Vance" class="w-full border border-beige p-2.5 outline-none focus:border-gold-500">
                 </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label class="block font-bold text-obsidian uppercase mb-1">Email Address</label>
+                        <input type="email" required placeholder="alexander@vance.com" class="w-full border border-beige p-2.5 outline-none focus:border-gold-500">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-obsidian uppercase mb-1">Phone (WhatsApp Optional)</label>
+                        <input type="tel" required placeholder="+1 555 019 2834" class="w-full border border-beige p-2.5 outline-none focus:border-gold-500">
+                    </div>
+                </div>
+
                 <div>
-                    <label class="block text-xs font-semibold text-slate-700 mb-1">Email Address</label>
-                    <input type="email" required placeholder="jane@example.com" class="w-full border border-slate-200 rounded-lg p-2.5 text-xs focus:ring-2 focus:ring-brand-500 outline-none">
+                    <label class="block font-bold text-obsidian uppercase mb-1">Shipping Address</label>
+                    <input type="text" required placeholder="740 Park Avenue, Apt 12B" class="w-full border border-beige p-2.5 outline-none focus:border-gold-500">
                 </div>
-                <div>
-                    <label class="block text-xs font-semibold text-slate-700 mb-1">Shipping Address</label>
-                    <input type="text" required placeholder="123 Beauty Lane, Suite 400" class="w-full border border-slate-200 rounded-lg p-2.5 text-xs focus:ring-2 focus:ring-brand-500 outline-none">
-                </div>
+
                 <div class="grid grid-cols-2 gap-3">
                     <div>
-                        <label class="block text-xs font-semibold text-slate-700 mb-1">Card Number</label>
-                        <input type="text" required placeholder="4532 •••• •••• 8892" maxlength="19" class="w-full border border-slate-200 rounded-lg p-2.5 text-xs focus:ring-2 focus:ring-brand-500 outline-none">
+                        <label class="block font-bold text-obsidian uppercase mb-1">City & Country</label>
+                        <input type="text" required placeholder="New York, USA" class="w-full border border-beige p-2.5 outline-none focus:border-gold-500">
                     </div>
                     <div>
-                        <label class="block text-xs font-semibold text-slate-700 mb-1">Expiry & CVC</label>
-                        <input type="text" required placeholder="08/28 • 123" class="w-full border border-slate-200 rounded-lg p-2.5 text-xs focus:ring-2 focus:ring-brand-500 outline-none">
+                        <label class="block font-bold text-obsidian uppercase mb-1">Postal Code</label>
+                        <input type="text" required placeholder="10021" class="w-full border border-beige p-2.5 outline-none focus:border-gold-500">
                     </div>
                 </div>
 
-                <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-sm">
-                    <span class="font-medium text-slate-600">Total Due:</span>
-                    <span id="checkout-total-price" class="font-bold text-lg text-brand-600">$0.00</span>
+                <div>
+                    <label class="block font-bold text-obsidian uppercase mb-2">Payment Method</label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <label class="border border-beige p-3 flex items-center gap-2 cursor-pointer hover:border-gold-500 bg-ivory">
+                            <input type="radio" name="payment_method" value="card" checked class="accent-gold-500">
+                            <span class="font-bold text-obsidian">Credit Card</span>
+                        </label>
+                        <label class="border border-beige p-3 flex items-center gap-2 cursor-pointer hover:border-gold-500 bg-ivory">
+                            <input type="radio" name="payment_method" value="cod" class="accent-gold-500">
+                            <span class="font-bold text-obsidian">Cash on Delivery (COD)</span>
+                        </label>
+                    </div>
                 </div>
 
-                <button type="submit" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-full shadow-lg shadow-brand-500/20 transition-all text-xs uppercase tracking-wider">
-                    Place Demo Order
-                </button>
+                <div class="pt-4 border-t border-beige flex items-center justify-between">
+                    <div>
+                        <span class="text-slate-500 block">Total Due:</span>
+                        <span id="checkout-final-total" class="font-bold text-lg text-gold-600">$0.00</span>
+                    </div>
+                    <button type="submit" class="btn-gold text-obsidian font-bold text-xs uppercase tracking-widest px-8 py-3.5 shadow-md">
+                        Place Order Now
+                    </button>
+                </div>
             </form>
         </div>
     </div>
 
-    <!-- TOAST NOTIFICATION STACK -->
-    <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col space-y-2 pointer-events-none"></div>
+    <!-- FLOATING LUXURY WHATSAPP CONCIERGE BUTTON -->
+    <a href="https://wa.me/?text=Hello%20ZUNAI%20GLASS%20Concierge,%20I%20would%20like%20to%20inquire%20about%20your%20luxury%20eyewear%20collection." 
+       target="_blank" 
+       rel="noopener"
+       class="fixed bottom-6 right-6 z-40 bg-emerald-600 hover:bg-emerald-500 text-white p-3.5 rounded-full shadow-2xl flex items-center justify-center group transition-transform hover:scale-110" 
+       title="WhatsApp Luxury Concierge">
+        <i data-lucide="message-circle" class="w-6 h-6"></i>
+        <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-in-out whitespace-nowrap text-xs font-semibold px-0 group-hover:px-2">Concierge</span>
+    </a>
 
-    <!-- JAVASCRIPT APPLICATION LOGIC -->
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div id="toast-container" class="fixed bottom-6 left-6 z-50 flex flex-col space-y-2 pointer-events-none"></div>
+
+    <!-- JAVASCRIPT LOGIC ENGINE -->
     <script>
-        // Real Cosmetics Product Dataset
+        // LUXURY SUNGLASSES DATASET
         const products = [
             {
                 id: 1,
-                name: "Hyaluronic Acid Hydrating Serum",
-                category: "Skincare",
-                price: 38.00,
-                originalPrice: 46.00,
-                rating: 4.9,
-                reviews: 142,
-                image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=600",
-                badge: "Best Seller",
-                description: "Deeply penetrating multi-depth hyaluronic serum formulated to plump fine lines and restore essential moisture levels for radiant glass skin."
+                name: "Aura Gold Polarized Cat-Eye",
+                category: "Women",
+                tag: "Best Sellers",
+                price: 340.00,
+                originalPrice: 390.00,
+                rating: 5.0,
+                reviews: 48,
+                frameSize: "Medium",
+                colorName: "24k Champagne Gold / Black Zeiss Lens",
+                image: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&q=80&w=800",
+                description: "Sculpted Italian acetate paired with 24k gold wire-rimmed lens housing. Features polarized anti-reflective Zeiss optics for optimal clarity."
             },
             {
                 id: 2,
-                name: "Velvet Matte Liquid Lipstick (Ruby Red)",
-                category: "Makeup",
-                price: 24.00,
-                originalPrice: 28.00,
-                rating: 4.8,
-                reviews: 98,
-                image: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&q=80&w=600",
-                badge: "Trending",
-                description: "Intense pigment payoff with a weightless, non-drying velvet matte finish. Enriched with vitamin E and jojoba oil for 16-hour comfort."
+                name: "Imperium Aviator Titanium",
+                category: "Men",
+                tag: "Best Sellers",
+                price: 420.00,
+                originalPrice: 480.00,
+                rating: 4.9,
+                reviews: 62,
+                frameSize: "Oversized",
+                colorName: "Japanese Black Titanium / Dark Emerald Lens",
+                image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&q=80&w=800",
+                description: "Architectural aviator silhouette forged from ultra-lightweight Japanese aerospace titanium with custom laser-etched ZUNAI temple tips."
             },
             {
                 id: 3,
-                name: "Radiance Vitamin C Brightening Cream",
-                category: "Skincare",
-                price: 45.00,
-                originalPrice: 52.00,
-                rating: 4.9,
-                reviews: 210,
-                image: "https://images.unsplash.com/photo-1608248547160-fbc74658d37d?auto=format&fit=crop&q=80&w=600",
-                badge: "Award Winner",
-                description: "Potent 15% Vitamin C complex combined with niacinamide to target dark spots, even skin tone, and boost natural collagen synthesis."
+                name: "Celeste Oversized Square",
+                category: "Women",
+                tag: "New Arrivals",
+                price: 310.00,
+                originalPrice: null,
+                rating: 4.8,
+                reviews: 29,
+                frameSize: "Oversized",
+                colorName: "Warm Tortoiseshell / Gradient Amber Lens",
+                image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&q=80&w=800",
+                description: "Commanding square contours with hand-beveled edges. Designed for high fashion statements and maximum UV400 coverage."
             },
             {
                 id: 4,
-                name: "Nourishing Argan Hair Treatment Oil",
-                category: "Haircare",
-                price: 32.00,
-                originalPrice: 38.00,
-                rating: 4.7,
-                reviews: 86,
-                image: "https://images.unsplash.com/photo-1526947425960-945c6e72858f?auto=format&fit=crop&q=80&w=600",
-                badge: null,
-                description: "Cold-pressed Moroccan argan oil infused with botanical keratin to tame frizz, seal split ends, and deliver silky shine without weight."
+                name: "Vanguard Modern Wayfarer",
+                category: "Men",
+                tag: "New Arrivals",
+                price: 290.00,
+                originalPrice: 330.00,
+                rating: 4.9,
+                reviews: 35,
+                frameSize: "Large",
+                colorName: "Obsidian Black / Smoke Polarized Lens",
+                image: "https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&q=80&w=800",
+                description: "Reimagined classic wayfarer with sharp geometric beveling and 5-barrel gold pin hinges. Hand-polished to a mirror sheen."
             },
             {
                 id: 5,
-                name: "Rose Water Refreshing Facial Mist",
-                category: "Skincare",
-                price: 22.00,
-                originalPrice: 25.00,
-                rating: 4.6,
-                reviews: 74,
-                image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=600",
-                badge: "New Formula",
-                description: "Pure organic Damask rose hydrosol that tones, calms redness, and sets makeup with an instant burst of soothing hydration."
+                name: "Sovereign Gold Hexagon",
+                category: "Women",
+                tag: "Best Sellers",
+                price: 380.00,
+                originalPrice: 420.00,
+                rating: 5.0,
+                reviews: 54,
+                frameSize: "Medium",
+                colorName: "Champagne Gold Frame / Soft Blue Gradient",
+                image: "https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&q=80&w=800",
+                description: "Delicate hexagonal rimless construction trimmed with micro-engraved gold detailing. Includes custom leather presentation box."
             },
             {
                 id: 6,
-                name: "Luxury Oud & Vanilla Eau de Parfum",
-                category: "Fragrance",
-                price: 85.00,
-                originalPrice: 95.00,
-                rating: 5.0,
-                reviews: 312,
-                image: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&q=80&w=600",
-                badge: "Luxury Pick",
-                description: "An alluring blend of rare Cambodian oud, warm Madagascar vanilla, and delicate white jasmine notes for an enchanting olfactory trail."
+                name: "Nero Bold Minimalist Oval",
+                category: "Men",
+                tag: "New Arrivals",
+                price: 330.00,
+                originalPrice: null,
+                rating: 4.7,
+                reviews: 18,
+                frameSize: "Medium",
+                colorName: "Matte Charcoal Acetate / Dark Green Lens",
+                image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=800",
+                description: "Minimalist 90s inspired oval frame crafted with high-density Italian acetate for supreme durability and understated luxury."
             },
             {
                 id: 7,
-                name: "Gentle Foaming Amino Cleanser",
-                category: "Skincare",
-                price: 26.00,
-                originalPrice: 30.00,
-                rating: 4.8,
-                reviews: 115,
-                image: "https://images.unsplash.com/photo-1556228722-d1191e7747e7?auto=format&fit=crop&q=80&w=600",
-                badge: null,
-                description: "pH-balanced amino acid cleanser that gently removes impurities and waterproof makeup while preserving the natural skin barrier."
+                name: "Elysium Cat-Eye Gold Temple",
+                category: "Women",
+                tag: "Best Sellers",
+                price: 360.00,
+                originalPrice: 400.00,
+                rating: 4.9,
+                reviews: 41,
+                frameSize: "Large",
+                colorName: "Ivory White Acetate / Gold Accent",
+                image: "https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&q=80&w=800",
+                description: "High-contrast ivory acetate offset by 24k gold temple arms. Fitted with category 3 UV protection lenses."
             },
             {
                 id: 8,
-                name: "Silk Glow Liquid Foundation",
-                category: "Makeup",
-                price: 42.00,
-                originalPrice: 48.00,
-                rating: 4.7,
-                reviews: 164,
-                image: "https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?auto=format&fit=crop&q=80&w=600",
-                badge: "Popular",
-                description: "Medium-to-buildable breathable coverage providing a second-skin satin glow. Formulated with light-reflecting micro-pearls."
+                name: "Monarch Round Browline",
+                category: "Men",
+                tag: "Best Sellers",
+                price: 350.00,
+                originalPrice: null,
+                rating: 4.8,
+                reviews: 33,
+                frameSize: "Medium",
+                colorName: "Gold Rim & Black Browline / Brown Polarized",
+                image: "https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&q=80&w=800",
+                description: "Vintage-inspired browline silhouette elevated with gold Filigree wire and adjustable silicone nose pads."
             }
         ];
 
-        // Global Application State
+        // GLOBAL APPLICATION STATE
         let cart = [];
         let wishlist = new Set();
-        let currentCategory = 'All';
-        let searchQuery = '';
+        let currentActiveCategory = 'All';
+        let discountMultiplier = 1.0;
+        let activePromoCode = '';
 
-        // DOM Element Cache
-        const productsGrid = document.getElementById('products-grid');
-        const emptyState = document.getElementById('empty-state');
-        const cartBadge = document.getElementById('cart-badge');
-        const cartCountBadge = document.getElementById('cart-count-badge');
-        const headerCartTotal = document.getElementById('header-cart-total');
-        const wishlistBadge = document.getElementById('wishlist-badge');
-        
-        // Cart Drawer Elements
-        const cartDrawerOverlay = document.getElementById('cart-drawer-overlay');
-        const cartDrawer = document.getElementById('cart-drawer');
-        const cartToggleBtn = document.getElementById('cart-toggle-btn');
-        const closeCartBtn = document.getElementById('close-cart-btn');
-        const cartItemsContainer = document.getElementById('cart-items-container');
-        const cartSubtotalEl = document.getElementById('cart-subtotal');
-        const cartTotalEl = document.getElementById('cart-total');
-
-        // Modal Elements
-        const quickViewModal = document.getElementById('quick-view-modal');
-        const quickViewContent = document.getElementById('quick-view-content');
-        const quickViewBody = document.getElementById('quick-view-body');
-        const closeQuickModal = document.getElementById('close-quick-modal');
-        const checkoutModal = document.getElementById('checkout-modal');
-
-        // Initialization
+        // INITIALIZATION ON LOAD
         window.onload = () => {
-            renderProducts();
-            setupEventListeners();
+            renderFeaturedHomeProducts();
+            renderShopGrid();
+            setupSearchListeners();
             lucide.createIcons();
         };
 
-        // Render Product Cards Grid
-        function renderProducts() {
+        // NAVIGATION VIEW SWITCHER (Single Page App approach)
+        function navigateTo(pageId) {
+            document.querySelectorAll('.view-container').forEach(view => view.classList.add('hidden'));
+            
+            const targetView = document.getElementById(`view-${pageId}`);
+            if (targetView) {
+                targetView.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Update Active Nav Link CSS
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.dataset.page === pageId) {
+                    link.className = "nav-link text-gold-500 hover:text-gold-500 transition-colors py-1";
+                } else {
+                    link.className = "nav-link text-slate-300 hover:text-gold-500 transition-colors py-1";
+                }
+            });
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        // RENDER HOME FEATURED PRODUCTS
+        function renderFeaturedHomeProducts() {
+            const container = document.getElementById('home-featured-grid');
+            const featuredItems = products.slice(0, 4);
+
+            container.innerHTML = featuredItems.map(p => createProductCardHTML(p)).join('');
+            lucide.createIcons();
+        }
+
+        // RENDER MAIN CATALOG PRODUCTS
+        function renderShopGrid() {
+            const container = document.getElementById('main-shop-grid');
+            const emptyState = document.getElementById('shop-empty-state');
+            const searchVal = document.getElementById('header-search-input').value.toLowerCase();
+
             let filtered = products.filter(p => {
-                const matchesCategory = currentCategory === 'All' || p.category === currentCategory;
-                const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                                      p.category.toLowerCase().includes(searchQuery.toLowerCase());
-                return matchesCategory && matchesSearch;
+                const matchCat = (currentActiveCategory === 'All') || 
+                                 (currentActiveCategory === 'Men' && p.category === 'Men') ||
+                                 (currentActiveCategory === 'Women' && p.category === 'Women') ||
+                                 (currentActiveCategory === 'Best Sellers' && p.tag === 'Best Sellers') ||
+                                 (currentActiveCategory === 'New Arrivals' && p.tag === 'New Arrivals');
+
+                const matchSearch = p.name.toLowerCase().includes(searchVal) || 
+                                    p.description.toLowerCase().includes(searchVal) ||
+                                    p.colorName.toLowerCase().includes(searchVal);
+                return matchCat && matchSearch;
             });
 
             // Sorting logic
-            const sortVal = document.getElementById('sort-select').value;
-            if (sortVal === 'price-low') filtered.sort((a,b) => a.price - b.price);
-            if (sortVal === 'price-high') filtered.sort((a,b) => b.price - a.price);
-            if (sortVal === 'rating') filtered.sort((a,b) => b.rating - a.rating);
+            const sortOption = document.getElementById('shop-sort').value;
+            if (sortOption === 'low-high') filtered.sort((a,b) => a.price - b.price);
+            if (sortOption === 'high-low') filtered.sort((a,b) => b.price - a.price);
+            if (sortOption === 'rating') filtered.sort((a,b) => b.rating - a.rating);
 
             if (filtered.length === 0) {
-                productsGrid.innerHTML = '';
+                container.innerHTML = '';
                 emptyState.classList.remove('hidden');
                 return;
             } else {
                 emptyState.classList.add('hidden');
             }
 
-            productsGrid.innerHTML = filtered.map(product => {
-                const isWishlisted = wishlist.has(product.id);
-                return `
-                <div class="product-card bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
-                    <div class="relative aspect-square overflow-hidden bg-brand-50/50">
-                        <img src="${product.image}" alt="${product.name}" class="img-zoom w-full h-full object-cover">
+            container.innerHTML = filtered.map(p => createProductCardHTML(p)).join('');
+            lucide.createIcons();
+        }
+
+        // REUSABLE PRODUCT CARD COMPONENT HTML
+        function createProductCardHTML(product) {
+            const isWishlisted = wishlist.has(product.id);
+            return `
+                <div class="product-card bg-white border border-beige/80 flex flex-col group relative transition-all duration-300 hover:shadow-xl">
+                    
+                    <!-- Image Container -->
+                    <div class="product-img-container relative aspect-[4/3] bg-ivory overflow-hidden cursor-pointer" onclick="openProductDetailView(${product.id})">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover">
                         
-                        ${product.badge ? `<span class="absolute top-3 left-3 bg-brand-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">${product.badge}</span>` : ''}
-                        
-                        <!-- Wishlist Toggle -->
-                        <button onclick="toggleWishlist(${product.id})" class="absolute top-3 right-3 p-2 bg-white/80 backdrop-blur-md rounded-full text-slate-600 hover:text-pink-500 hover:bg-white transition-colors shadow-sm">
+                        ${product.tag ? `<span class="absolute top-3 left-3 bg-obsidian text-gold-400 text-[9px] font-bold px-2.5 py-1 uppercase tracking-widest border border-gold-500/30">${product.tag}</span>` : ''}
+
+                        <!-- Wishlist Button -->
+                        <button onclick="event.stopPropagation(); toggleWishlist(${product.id})" class="absolute top-3 right-3 p-2 bg-white/80 hover:bg-white text-obsidian rounded-full shadow-sm transition-colors">
                             <i data-lucide="heart" class="w-4 h-4 ${isWishlisted ? 'fill-pink-500 text-pink-500' : ''}"></i>
                         </button>
 
-                        <!-- Quick View Overlay Button -->
-                        <div class="absolute inset-x-0 bottom-3 px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                            <button onclick="openQuickView(${product.id})" class="w-full py-2 bg-white/90 backdrop-blur-md text-slate-800 text-xs font-semibold rounded-lg shadow border border-slate-200 hover:bg-white transition-colors">
-                                Quick View
+                        <!-- Quick View Hover Bar -->
+                        <div class="absolute inset-x-0 bottom-0 p-3 bg-obsidian/90 backdrop-blur opacity-0 group-hover:opacity-100 transition-opacity flex justify-center">
+                            <button onclick="event.stopPropagation(); openQuickView(${product.id})" class="text-white text-xs font-semibold uppercase tracking-widest hover:text-gold-400 flex items-center gap-1.5">
+                                <i data-lucide="eye" class="w-3.5 h-3.5"></i> Quick View
                             </button>
                         </div>
                     </div>
 
+                    <!-- Details -->
                     <div class="p-5 flex flex-col flex-grow">
-                        <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
-                            <span>${product.category}</span>
-                            <div class="flex items-center text-amber-400 font-semibold gap-1">
-                                <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+                        <div class="flex items-center justify-between text-[11px] text-slate-500 mb-1">
+                            <span class="uppercase tracking-wider font-semibold">${product.category} • ${product.frameSize}</span>
+                            <div class="flex items-center text-gold-500 font-semibold gap-1">
+                                <i data-lucide="star" class="w-3 h-3 fill-gold-500"></i>
                                 <span>${product.rating}</span>
-                                <span class="text-slate-300">(${product.reviews})</span>
                             </div>
                         </div>
 
-                        <h3 class="font-bold text-slate-900 text-sm mb-2 group-hover:text-brand-600 transition-colors line-clamp-1">${product.name}</h3>
-                        <p class="text-xs text-slate-500 mb-4 line-clamp-2 flex-grow">${product.description}</p>
+                        <h3 onclick="openProductDetailView(${product.id})" class="font-serif font-bold text-obsidian text-base hover:text-gold-600 transition-colors cursor-pointer line-clamp-1 mb-1">${product.name}</h3>
+                        <p class="text-[11px] text-slate-400 line-clamp-1 mb-3">${product.colorName}</p>
 
-                        <div class="flex items-center justify-between pt-3 border-t border-slate-100 mt-auto">
+                        <div class="flex items-center justify-between pt-3 border-t border-beige/60 mt-auto">
                             <div>
-                                <span class="text-lg font-bold text-slate-900">$${product.price.toFixed(2)}</span>
-                                ${product.originalPrice ? `<span class="text-xs text-slate-400 line-through ml-1">$${product.originalPrice.toFixed(2)}</span>` : ''}
+                                <span class="font-serif font-bold text-lg text-obsidian">$${product.price.toFixed(2)}</span>
+                                ${product.originalPrice ? `<span class="text-xs text-slate-400 line-through ml-1.5">$${product.originalPrice.toFixed(2)}</span>` : ''}
                             </div>
-                            <button onclick="addToCart(${product.id})" class="px-3.5 py-2 bg-brand-50 hover:bg-brand-600 text-brand-700 hover:text-white rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 shadow-sm">
-                                <i data-lucide="plus" class="w-4 h-4"></i> Add
+                            <button onclick="addToCart(${product.id})" class="btn-gold text-obsidian font-bold text-xs px-3.5 py-2 uppercase tracking-wider flex items-center gap-1">
+                                <i data-lucide="plus" class="w-3.5 h-3.5"></i> Add
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            `;
+        }
+
+        // FILTER CATEGORY HANDLER
+        function filterCategory(cat) {
+            currentActiveCategory = cat;
+            document.getElementById('catalog-category-title').textContent = `${cat} Eyewear Collection`;
+
+            document.querySelectorAll('.shop-filter-btn').forEach(btn => {
+                if (btn.dataset.cat === cat) {
+                    btn.className = "shop-filter-btn active-filter px-4 py-1.5 text-xs font-semibold uppercase tracking-wider bg-obsidian text-gold-400";
+                } else {
+                    btn.className = "shop-filter-btn px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-slate-600 hover:text-obsidian";
+                }
+            });
+
+            renderShopGrid();
+        }
+
+        // SEARCH LISTENERS
+        function setupSearchListeners() {
+            const handleSearch = () => {
+                if (document.getElementById('view-shop').classList.contains('hidden')) {
+                    navigateTo('shop');
+                }
+                renderShopGrid();
+            };
+
+            document.getElementById('header-search-input').addEventListener('input', handleSearch);
+            document.getElementById('mobile-search-input').addEventListener('input', (e) => {
+                document.getElementById('header-search-input').value = e.target.value;
+                handleSearch();
+            });
+        }
+
+        // PRODUCT DETAIL PAGE VIEW
+        function openProductDetailView(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const container = document.getElementById('product-detail-container');
+            const isWishlisted = wishlist.has(product.id);
+
+            container.innerHTML = `
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white p-8 sm:p-12 border border-beige shadow-lg">
+                    <div class="bg-ivory border border-beige overflow-hidden">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover">
+                    </div>
+
+                    <div class="space-y-6">
+                        <div>
+                            <span class="text-gold-600 text-xs font-bold uppercase tracking-[0.2em]">${product.category} • ${product.frameSize} Frame</span>
+                            <h1 class="font-serif text-3xl sm:text-4xl font-bold text-obsidian mt-1">${product.name}</h1>
+                            <p class="text-xs text-slate-500 mt-1">${product.colorName}</p>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <span class="font-serif text-3xl font-bold text-obsidian">$${product.price.toFixed(2)}</span>
+                            ${product.originalPrice ? `<span class="text-sm text-slate-400 line-through">$${product.originalPrice.toFixed(2)}</span>` : ''}
+                            <span class="bg-emerald-50 text-emerald-700 text-[10px] font-bold uppercase px-2.5 py-1 ml-auto">In Stock • Express Ships Free</span>
+                        </div>
+
+                        <p class="text-xs text-charcoal leading-relaxed border-y border-beige py-4">
+                            ${product.description}
+                        </p>
+
+                        <div class="space-y-3">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-obsidian">Included Luxury Accessories:</h4>
+                            <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4">
+                                <li>Handcrafted Italian Leather Presentation Case</li>
+                                <li>Microfiber Optics Polishing Cloth with ZUNAI Monogram</li>
+                                <li>Numbered Certificate of Authenticity & 2-Year Warranty Card</li>
+                            </ul>
+                        </div>
+
+                        <div class="flex items-center gap-4 pt-4">
+                            <button onclick="addToCart(${product.id})" class="flex-grow btn-gold text-obsidian font-bold text-xs uppercase tracking-widest py-4 flex items-center justify-center gap-2 shadow-md">
+                                <i data-lucide="shopping-bag" class="w-4 h-4"></i> Add To Cart
+                            </button>
+                            <button onclick="toggleWishlist(${product.id})" class="p-4 border border-beige hover:border-gold-500 text-obsidian">
+                                <i data-lucide="heart" class="w-5 h-5 ${isWishlisted ? 'fill-pink-500 text-pink-500' : ''}"></i>
                             </button>
                         </div>
                     </div>
                 </div>
-                `;
-            }).join('');
+            `;
 
             lucide.createIcons();
+            navigateTo('product-detail');
         }
 
-        // Category Filter Handler
-        function filterCategory(cat) {
-            currentCategory = cat;
-            document.querySelectorAll('.cat-filter-btn').forEach(btn => {
-                if (btn.dataset.category === cat) {
-                    btn.className = "cat-filter-btn px-4 py-2 rounded-full text-xs font-semibold transition-all bg-brand-600 text-white shadow-sm";
-                } else {
-                    btn.className = "cat-filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-slate-600 hover:bg-brand-50 border border-slate-200 transition-all";
-                }
-            });
-            renderProducts();
-        }
-
-        function sortProducts() {
-            renderProducts();
-        }
-
-        function resetFilters() {
-            currentCategory = 'All';
-            searchQuery = '';
-            document.getElementById('header-search-input').value = '';
-            filterCategory('All');
-        }
-
-        // Shopping Cart Management
+        // CART MANAGEMENT LOGIC
         function addToCart(productId, qty = 1) {
             const product = products.find(p => p.id === productId);
-            const existingItem = cart.find(item => item.id === productId);
+            const existing = cart.find(item => item.id === productId);
 
-            if (existingItem) {
-                existingItem.quantity += qty;
+            if (existing) {
+                existing.quantity += qty;
             } else {
                 cart.push({ ...product, quantity: qty });
             }
 
             updateCartUI();
-            showToast(`Added "${product.name}" to your cart!`);
+            showToast(`Added "${product.name}" to shopping bag.`);
         }
 
         function updateQuantity(productId, change) {
@@ -828,38 +1222,58 @@
             updateCartUI();
         }
 
+        function applyPromoCode() {
+            const input = document.getElementById('promo-code-input').value.trim().toUpperCase();
+            if (input === 'ZUNAI10') {
+                discountMultiplier = 0.90; // 10% OFF
+                activePromoCode = 'ZUNAI10';
+                document.getElementById('promo-discount-row').classList.remove('hidden');
+                showToast("10% Luxury Discount Applied!");
+            } else {
+                showToast("Invalid Promo Code");
+            }
+            updateCartUI();
+        }
+
         function updateCartUI() {
             const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
             const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const finalTotal = subtotal * discountMultiplier;
 
-            cartBadge.textContent = totalCount;
-            cartCountBadge.textContent = totalCount;
-            headerCartTotal.textContent = `$${subtotal.toFixed(2)}`;
-            cartSubtotalEl.textContent = `$${subtotal.toFixed(2)}`;
-            cartTotalEl.textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('cart-badge').textContent = totalCount;
+            document.getElementById('cart-drawer-count').textContent = totalCount;
+            document.getElementById('header-cart-total').textContent = `$${finalTotal.toFixed(0)}`;
+            document.getElementById('cart-drawer-subtotal').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('cart-drawer-total').textContent = `$${finalTotal.toFixed(2)}`;
+            document.getElementById('checkout-final-total').textContent = `$${finalTotal.toFixed(2)}`;
 
+            if (discountMultiplier < 1.0) {
+                const discountVal = subtotal - finalTotal;
+                document.getElementById('promo-discount-amount').textContent = `-$${discountVal.toFixed(2)}`;
+            }
+
+            const container = document.getElementById('cart-drawer-items');
             if (cart.length === 0) {
-                cartItemsContainer.innerHTML = `
-                    <div class="text-center py-12">
+                container.innerHTML = `
+                    <div class="text-center py-16">
                         <i data-lucide="shopping-bag" class="w-12 h-12 text-slate-300 mx-auto mb-3"></i>
-                        <p class="text-slate-500 text-sm font-medium">Your cart is currently empty.</p>
-                        <button onclick="toggleCart(false)" class="mt-4 px-4 py-2 bg-brand-50 text-brand-600 font-semibold rounded-full text-xs">Start Shopping</button>
+                        <p class="text-xs text-slate-500">Your luxury shopping bag is empty.</p>
                     </div>
                 `;
             } else {
-                cartItemsContainer.innerHTML = cart.map(item => `
-                    <div class="flex items-center gap-4 p-3 bg-slate-50 rounded-2xl border border-slate-100">
-                        <img src="${item.image}" alt="${item.name}" class="w-16 h-16 rounded-xl object-cover bg-white">
+                container.innerHTML = cart.map(item => `
+                    <div class="flex items-center gap-4 p-3 bg-ivory border border-beige">
+                        <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover bg-white">
                         <div class="flex-grow min-w-0">
-                            <h4 class="text-xs font-bold text-slate-900 truncate">${item.name}</h4>
-                            <p class="text-xs text-brand-600 font-semibold mt-0.5">$${item.price.toFixed(2)}</p>
+                            <h4 class="text-xs font-bold text-obsidian truncate">${item.name}</h4>
+                            <p class="text-xs text-gold-600 font-bold mt-0.5">$${item.price.toFixed(2)}</p>
                             <div class="flex items-center gap-2 mt-2">
-                                <button onclick="updateQuantity(${item.id}, -1)" class="w-5 h-5 rounded bg-white text-slate-600 border border-slate-200 flex items-center justify-center text-xs font-bold hover:bg-brand-50">-</button>
-                                <span class="text-xs font-bold text-slate-700 w-4 text-center">${item.quantity}</span>
-                                <button onclick="updateQuantity(${item.id}, 1)" class="w-5 h-5 rounded bg-white text-slate-600 border border-slate-200 flex items-center justify-center text-xs font-bold hover:bg-brand-50">+</button>
+                                <button onclick="updateQuantity(${item.id}, -1)" class="w-5 h-5 bg-white border border-beige flex items-center justify-center text-xs font-bold text-obsidian">-</button>
+                                <span class="text-xs font-bold text-obsidian w-4 text-center">${item.quantity}</span>
+                                <button onclick="updateQuantity(${item.id}, 1)" class="w-5 h-5 bg-white border border-beige flex items-center justify-center text-xs font-bold text-obsidian">+</button>
                             </div>
                         </div>
-                        <button onclick="removeFromCart(${item.id})" class="p-1.5 text-slate-400 hover:text-red-500 transition-colors">
+                        <button onclick="removeFromCart(${item.id})" class="text-slate-400 hover:text-red-500">
                             <i data-lucide="trash-2" class="w-4 h-4"></i>
                         </button>
                     </div>
@@ -869,174 +1283,195 @@
             lucide.createIcons();
         }
 
-        // Cart Drawer Animation Controls
-        function toggleCart(open) {
+        function toggleCartDrawer(open) {
+            const overlay = document.getElementById('cart-drawer-overlay');
+            const drawer = document.getElementById('cart-drawer');
             if (open) {
-                cartDrawerOverlay.classList.remove('hidden');
+                overlay.classList.remove('hidden');
                 setTimeout(() => {
-                    cartDrawerOverlay.classList.remove('opacity-0');
-                    cartDrawer.classList.remove('translate-x-full');
+                    overlay.classList.remove('opacity-0');
+                    drawer.classList.remove('translate-x-full');
                 }, 10);
             } else {
-                cartDrawer.classList.add('translate-x-full');
-                cartDrawerOverlay.classList.add('opacity-0');
-                setTimeout(() => {
-                    cartDrawerOverlay.classList.add('hidden');
-                }, 300);
+                drawer.classList.add('translate-x-full');
+                overlay.classList.add('opacity-0');
+                setTimeout(() => overlay.classList.add('hidden'), 300);
             }
         }
 
-        // Wishlist Toggle
+        // WISHLIST MANAGEMENT LOGIC
         function toggleWishlist(productId) {
+            const product = products.find(p => p.id === productId);
             if (wishlist.has(productId)) {
                 wishlist.delete(productId);
-                showToast("Removed from wishlist");
+                showToast("Removed frame from wishlist");
             } else {
                 wishlist.add(productId);
-                showToast("Saved to your wishlist!");
+                showToast(`Saved "${product.name}" to wishlist.`);
             }
-            wishlistBadge.textContent = wishlist.size;
-            if (wishlist.size > 0) {
-                wishlistBadge.classList.remove('hidden');
-            } else {
-                wishlistBadge.classList.add('hidden');
-            }
-            renderProducts();
+
+            const count = wishlist.size;
+            const badge = document.getElementById('wishlist-badge');
+            badge.textContent = count;
+            if (count > 0) badge.classList.remove('hidden');
+            else badge.classList.add('hidden');
+
+            renderWishlistDrawerItems();
+            renderFeaturedHomeProducts();
+            renderShopGrid();
         }
 
-        // Quick View Modal
+        function renderWishlistDrawerItems() {
+            document.getElementById('wishlist-drawer-count').textContent = wishlist.size;
+            const container = document.getElementById('wishlist-drawer-items');
+
+            if (wishlist.size === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-16">
+                        <i data-lucide="heart" class="w-12 h-12 text-slate-300 mx-auto mb-3"></i>
+                        <p class="text-xs text-slate-500">No saved frames in wishlist.</p>
+                    </div>
+                `;
+            } else {
+                const wishlistedProducts = products.filter(p => wishlist.has(p.id));
+                container.innerHTML = wishlistedProducts.map(item => `
+                    <div class="flex items-center gap-4 p-3 bg-ivory border border-beige">
+                        <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover bg-white">
+                        <div class="flex-grow min-w-0">
+                            <h4 class="text-xs font-bold text-obsidian truncate">${item.name}</h4>
+                            <p class="text-xs text-gold-600 font-bold mt-0.5">$${item.price.toFixed(2)}</p>
+                            <button onclick="addToCart(${item.id}); toggleWishlist(${item.id})" class="mt-2 text-[10px] font-bold uppercase tracking-wider text-obsidian border-b border-obsidian">Move to Bag</button>
+                        </div>
+                        <button onclick="toggleWishlist(${item.id})" class="text-slate-400 hover:text-red-500">
+                            <i data-lucide="x" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                `).join('');
+            }
+            lucide.createIcons();
+        }
+
+        function toggleWishlistDrawer(open) {
+            const overlay = document.getElementById('wishlist-drawer-overlay');
+            const drawer = document.getElementById('wishlist-drawer');
+            if (open) {
+                renderWishlistDrawerItems();
+                overlay.classList.remove('hidden');
+                setTimeout(() => {
+                    overlay.classList.remove('opacity-0');
+                    drawer.classList.remove('translate-x-full');
+                }, 10);
+            } else {
+                drawer.classList.add('translate-x-full');
+                overlay.classList.add('opacity-0');
+                setTimeout(() => overlay.classList.add('hidden'), 300);
+            }
+        }
+
+        // QUICK VIEW MODAL
         function openQuickView(productId) {
             const product = products.find(p => p.id === productId);
             if (!product) return;
 
-            quickViewBody.innerHTML = `
-                <div class="aspect-square bg-brand-50 relative">
+            const modal = document.getElementById('quick-view-modal');
+            const content = document.getElementById('quick-view-content');
+            const body = document.getElementById('quick-view-body');
+
+            body.innerHTML = `
+                <div class="bg-ivory aspect-square">
                     <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover">
                 </div>
-                <div class="p-6 sm:p-8 flex flex-col justify-between">
+                <div class="p-8 flex flex-col justify-between">
                     <div>
-                        <span class="text-xs font-bold text-brand-600 uppercase tracking-widest">${product.category}</span>
-                        <h3 class="font-serif text-2xl font-bold text-slate-900 mt-1 mb-2">${product.name}</h3>
-                        <div class="flex items-center gap-2 mb-4">
-                            <div class="flex items-center text-amber-400">
-                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
-                                <span class="text-xs font-bold text-slate-700 ml-1">${product.rating}</span>
-                            </div>
-                            <span class="text-xs text-slate-400">(${product.reviews} reviews)</span>
-                        </div>
-                        <p class="text-xs text-slate-600 leading-relaxed mb-6">${product.description}</p>
+                        <span class="text-gold-600 text-xs font-bold uppercase tracking-widest">${product.category} • ${product.frameSize} Frame</span>
+                        <h3 class="font-serif text-2xl font-bold text-obsidian mt-1 mb-2">${product.name}</h3>
+                        <p class="text-xs text-slate-500 mb-4">${product.colorName}</p>
+                        <p class="text-xs text-charcoal leading-relaxed mb-6">${product.description}</p>
                     </div>
 
-                    <div class="space-y-4 pt-4 border-t border-slate-100">
+                    <div class="pt-4 border-t border-beige space-y-4">
                         <div class="flex items-center justify-between">
-                            <span class="text-2xl font-bold text-slate-900">$${product.price.toFixed(2)}</span>
-                            <span class="text-xs text-emerald-600 bg-emerald-50 font-semibold px-2.5 py-1 rounded-full">In Stock & Ready to Ship</span>
+                            <span class="font-serif text-2xl font-bold text-obsidian">$${product.price.toFixed(2)}</span>
+                            <span class="text-[10px] text-emerald-700 bg-emerald-50 px-2.5 py-1 font-bold uppercase">UV400 Polarized</span>
                         </div>
-                        <button onclick="addToCart(${product.id}); closeQuickViewModal();" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-full shadow-md transition-colors text-xs uppercase tracking-wider flex items-center justify-center gap-2">
-                            <i data-lucide="shopping-bag" class="w-4 h-4"></i> Add To Bag
+                        <button onclick="addToCart(${product.id}); closeQuickViewModal()" class="w-full btn-gold text-obsidian font-bold text-xs uppercase tracking-widest py-3.5 shadow-md">
+                            Add To Bag
                         </button>
                     </div>
                 </div>
             `;
 
-            quickViewModal.classList.remove('hidden');
+            modal.classList.remove('hidden');
             setTimeout(() => {
-                quickViewModal.classList.remove('opacity-0');
-                quickViewContent.classList.remove('scale-95');
+                modal.classList.remove('opacity-0');
+                content.classList.remove('scale-95');
             }, 10);
             lucide.createIcons();
         }
 
         function closeQuickViewModal() {
-            quickViewModal.classList.add('opacity-0');
-            quickViewContent.classList.add('scale-95');
-            setTimeout(() => {
-                quickViewModal.classList.add('hidden');
-            }, 300);
+            const modal = document.getElementById('quick-view-modal');
+            const content = document.getElementById('quick-view-content');
+            modal.classList.add('opacity-0');
+            content.classList.add('scale-95');
+            setTimeout(() => modal.classList.add('hidden'), 300);
         }
 
-        // Checkout Modal Logic
+        // CHECKOUT FLOW
         function openCheckoutModal() {
             if (cart.length === 0) {
-                showToast("Your cart is empty!");
+                showToast("Your cart is empty.");
                 return;
             }
-            toggleCart(false);
-            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-            document.getElementById('checkout-total-price').textContent = `$${subtotal.toFixed(2)}`;
-
-            checkoutModal.classList.remove('hidden');
-            setTimeout(() => {
-                checkoutModal.classList.remove('opacity-0');
-            }, 10);
+            toggleCartDrawer(false);
+            const modal = document.getElementById('checkout-modal');
+            modal.classList.remove('hidden');
+            setTimeout(() => modal.classList.remove('opacity-0'), 10);
         }
 
         function closeCheckoutModal() {
-            checkoutModal.classList.add('opacity-0');
-            setTimeout(() => {
-                checkoutModal.classList.add('hidden');
-            }, 300);
+            const modal = document.getElementById('checkout-modal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => modal.classList.add('hidden'), 300);
         }
 
-        function handleCheckout(e) {
+        function handleCheckoutSubmit(e) {
             e.preventDefault();
             cart = [];
+            discountMultiplier = 1.0;
             updateCartUI();
             closeCheckoutModal();
-            showToast("🎉 Order Placed! Thank you for shopping with Safi Cosmetics.");
+            showToast("🎉 Order Confirmed! ZUNAI Order #ZG-202688 is being prepared.");
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            showToast("Inquiry sent to ZUNAI Concierge.");
+            e.target.reset();
         }
 
         function handleNewsletter(e) {
             e.preventDefault();
-            showToast("✨ Subscribed! Welcome to Safi Glow Club.");
+            showToast("Welcome! Use code 'ZUNAI10' for 10% off.");
             e.target.reset();
         }
 
-        // Toast Notification System
-        function showToast(message) {
+        // TOAST SYSTEM
+        function showToast(msg) {
             const container = document.getElementById('toast-container');
             const toast = document.createElement('div');
-            toast.className = "toast-enter bg-slate-900 text-white px-4 py-3 rounded-2xl shadow-xl flex items-center gap-3 text-xs font-semibold border border-slate-700 transition-all duration-300 pointer-events-auto";
+            toast.className = "bg-obsidian text-white px-4 py-3 border border-gold-500/40 text-xs font-semibold uppercase tracking-wider flex items-center gap-3 shadow-2xl transition-all duration-300 pointer-events-auto";
             toast.innerHTML = `
-                <div class="w-2 h-2 rounded-full bg-brand-400"></div>
-                <span>${message}</span>
+                <i data-lucide="sparkles" class="w-4 h-4 text-gold-500"></i>
+                <span>${msg}</span>
             `;
             container.appendChild(toast);
+            lucide.createIcons();
 
-            setTimeout(() => toast.classList.remove('toast-enter', 'opacity-0'), 10);
             setTimeout(() => {
                 toast.classList.add('opacity-0', 'translate-y-2');
                 setTimeout(() => toast.remove(), 300);
             }, 3500);
-        }
-
-        // Global Event Listeners Setup
-        function setupEventListeners() {
-            // Cart toggles
-            cartToggleBtn.addEventListener('click', () => toggleCart(true));
-            closeCartBtn.addEventListener('click', () => toggleCart(false));
-            cartDrawerOverlay.addEventListener('click', (e) => {
-                if (e.target === cartDrawerOverlay) toggleCart(false);
-            });
-
-            // Quick view modal close
-            closeQuickModal.addEventListener('click', closeQuickViewModal);
-            quickViewModal.addEventListener('click', (e) => {
-                if (e.target === quickViewModal) closeQuickViewModal();
-            });
-
-            // Live Search Inputs
-            const searchHandler = (e) => {
-                searchQuery = e.target.value;
-                renderProducts();
-            };
-            document.getElementById('header-search-input').addEventListener('input', searchHandler);
-            document.getElementById('mobile-search-input').addEventListener('input', searchHandler);
-
-            // Mobile menu toggle
-            document.getElementById('mobile-menu-btn').addEventListener('click', () => {
-                document.getElementById('mobile-menu').classList.toggle('hidden');
-            });
         }
     </script>
 </body>
